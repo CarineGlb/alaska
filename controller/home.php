@@ -7,13 +7,13 @@ function listChapters()
 {
 	 $chapters = getChapters();
 
-    require('view/homeBlog.php');
+    require(VIEW.'homeBlog.php');
 }
 
 function viewchapter()
 {
 	 $chapter = getChapter($_GET['id']);
-    require('view/chapterView.php');
+    require(VIEW.'chapterView.php');
   
 }
 

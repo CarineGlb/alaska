@@ -2,3 +2,14 @@
 
 
 font-family: 'Open Sans', sans-serif;
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+img#photo
+{
+    width:200px;
+    height:420px;
+    display:auto;
+}

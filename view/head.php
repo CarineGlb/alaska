@@ -11,8 +11,11 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!--css-->
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo ASSETS;?> style.css"/>
+
+    <script type ="texte/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type ="texte/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 <body>
