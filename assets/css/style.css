@@ -7,9 +7,10 @@ font-family: 'Open Sans', sans-serif;
     box-sizing: content-box;
 }
 
-img#photo
+.container
 {
-    width:200px;
-    height:420px;
-    display:auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }

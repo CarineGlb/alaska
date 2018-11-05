@@ -4,50 +4,35 @@
 1er fichier appelé sur le site
 Appelera le bon contrôleur
 
+C'est mon frontcontroller qui appellera mon controller depuis mon index
 */
-//include_once(CONTROLLER.'home.php');
-include_once ('controller/home.php');
+
+
+//include_once ('controller/home.php');
 include_once('config.php');
 include_once (CLASSES.'/routeur.php');
+
 
 //on teste le parametre action pour savoir quel controleur appeler
 
 
 if(isset($_GET['action']))
 {
-	 if($_GET['action'] == 'homeBlog')
-		{
-			listChapters();
-		}
-	 
-
-elseif ($_GET['action'] == 'chapter')
-		{
-			if(isset($_GET['id'])&& $_GET['id'] > 0)
-			{
-				viewchapter();
-				
-			}
-		}	
-
-else
-		{
-			var_dump('salut');
-			die;
-		}
-
-}	  
-
-else
-{
-	listChapters();
+    $request = $_GET['action'];
 }
 
-/*
-$routeur = new Routeur($_GET);
+else{
+    $request = 'home';
+}
+
+
+$routeur = new Routeur($request); //objet routeur dans lequel on passe la commande
 $routeur->renderController();
 
-*/
+
+
+
+
 
 
 

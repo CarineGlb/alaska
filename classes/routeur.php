@@ -2,31 +2,49 @@
 
 include_once (CONTROLLER.'home.php');
 
-//class routeur pour créer les routes et trouver le controller. Il gère l'ensemble des choix réalisés dans l'index//
+/*class routeur pour créer les routes et trouver le controller. Il gère l'ensemble des choix réalisés dans l'index
 
-/*class Routeur
-// créer un construc
-    //passer la route
-    // quand on a la route on fait un include
+créer un construc
+passer la route
+quand on a la route on fait un include*/
+
+class Routeur
 {
     private $request;
 
-    public function__construct ($request)// on crée le construc qui recupere $request
+    private $routes = ['home' => 'home', 'contact' =>'contact'];
+
+    public function __construct($request)// on crée le construc qui recupere $request
     {
         $this->request = $request; // il affecte à request la variable request
     }
 
     public function renderController()
     {
-        if($this->request == 'home')
-        {
-            include(CONTROLLER.'home.php');
-        }
-        else
-        {
-            listChapters();
-        }
-    }
+        $request = $this->request;
 
+        if(key_exists($request, $this->routes)) // si la clé existe dans le tableau routes alors
+            {
+                $controller= $this->routes[$request]; // on appelle le controller egal à sthis routes request
+               // include(CONTROLLER.$controller.'.php');
+
+                if( $request === 'home')
+                {
+                    listChapters();
+                }
+
+                elseif( $request === 'contact')
+                    {
+                        include(VIEW. 'contact.php');
+                    }
+            }
+            else
+            {
+            echo '404';
+            }
+    }
 }
-*/
+
+
+
+

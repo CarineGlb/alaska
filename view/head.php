@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset ="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 
         <!--css-->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo ASSETS;?> style.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo ASSETS;?> style.css"/>
 
     <script type ="texte/javascript" src="js/jquery-1.12.3.min.js"></script>
     <script type ="texte/javascript" src="bootstrap/js/bootstrap.min.js"></script>
