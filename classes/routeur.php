@@ -1,6 +1,6 @@
 <?php
 
-include_once (CONTROLLER.'home.php');
+//include_once (CONTROLLER.'Home.php');
 
 /*class routeur pour créer les routes et trouver le controller. Il gère l'ensemble des choix réalisés dans l'index
 
@@ -12,7 +12,11 @@ class Routeur
 {
     private $request;
 
-    private $routes = ['home' => 'home', 'contact' =>'contact'];
+    private $routes =
+        [
+                        'home'    => ['controller' =>'Home', 'method' =>'showHome'],
+                        'contact' => ['controller' =>'Home', 'method' =>'showContact'],
+        ];
 
     public function __construct($request)// on crée le construc qui recupere $request
     {
@@ -25,10 +29,14 @@ class Routeur
 
         if(key_exists($request, $this->routes)) // si la clé existe dans le tableau routes alors
             {
-                $controller= $this->routes[$request]; // on appelle le controller egal à sthis routes request
+                $controller = $this->routes[$request]['controller']; // on appelle le controller egal à sthis routes request
+                $method     = $this->routes[$request]['method'];
                // include(CONTROLLER.$controller.'.php');
 
-                if( $request === 'home')
+                $currentController = new $controller(); // $controller demandé juste au dessus
+                $currentController->$method();
+
+                /*if( $request === 'home')
                 {
                     listChapters();
                 }
@@ -36,7 +44,7 @@ class Routeur
                 elseif( $request === 'contact')
                     {
                         include(VIEW. 'contact.php');
-                    }
+                    }*/
             }
             else
             {

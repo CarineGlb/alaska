@@ -1,7 +1,4 @@
-<?php
-include_once ('view/head.php');
-include_once ('view/header.php');
-?>
+
 
 
 
@@ -31,7 +28,6 @@ include_once ('view/header.php');
         <img src="assets/img/carre.png" alt="carre" class="rounded float-left"/>
         </div>
 
-
         <?php foreach ($chapters as $key => $value){?>
             <h2> <?= $value['title']; ?> </h2>
             <p> <?= $value['content']; ?> </p>
@@ -45,6 +41,4 @@ include_once ('view/header.php');
 
 
 
-</body>
-</html>
 

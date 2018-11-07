@@ -3,26 +3,39 @@
 ini_set('display_errors','on');
 error_reporting(E_ALL);
 
-$root = $_SERVER['DOCUMENT_ROOT']; //[DOCUMENT_ROOT] => C:/wamp/www
-$host = $_SERVER['HTTP_HOST']; // [HTTP_HOST] => localhost
+//Mettre les classes dans un systeme de liste de chargement
+
+class MyAutoload
+{
+    public static function start () // statique car appelée 1 seule fois dans l'appli
+    {
+        spl_autoload_register(array(__CLASS__, 'autoload'));
+
+        $root = $_SERVER['DOCUMENT_ROOT'];
+        $host = $_SERVER['HTTP_HOST'];
+
+        define('HOST', 'http://' . $host . '/blog_alaska/');
+        define('ROOT', $root . '/blog_alaska/');
+
+        define('CONTROLLER', ROOT . 'controller/');
+        define('VIEW', ROOT . 'view/');
+        define('MODEL', ROOT . 'model/');
+        define('CLASSES', ROOT . 'classes/');
+
+        define('ASSETS', HOST . 'assets/');
+    }
+
+    public static function autoload ($class) // on passe les classes en variables. Si la classe existe on la charge
+    {
+        if (file_exists(MODEL . $class . '.php')) {
+            include_once(MODEL . $class . '.php');
+        } elseif (file_exists(CLASSES . $class . '.php')) {
+            include_once(CLASSES . $class . '.php');
+        } elseif (file_exists(CONTROLLER . $class . '.php')) {
+            include_once(CONTROLLER . $class . '.php');
+        }
+    }
+}
 
 
-define('HOST', 'http://'.$host.'/blog_alaska/');
-define('ROOT', $root.'/blog_alaska/'); // document_root = C:/wamp/www/blog_alaska  chemin des dossiers
 
-var_dump(HOST);
-var_dump(ROOT);
-
-//echo ROOT;EXIT; C:/wamp/www/blog_alaska/
-
-define('CONTROLLER', ROOT.'controller/');
-define('VIEW', ROOT.'view/');
-define('MODEL', ROOT.'model/');
-define('CLASSES', ROOT.'classes/');
-
-define('ASSETS', HOST.'assets/');
-// avec host car integration css se fait par ue url et pas par une insertion dans un dossier
-
-//echo CONTROLLER; EXIT;  C:/wamp/www/blog_alaska/
-
-//echo '<pre>'; print_r($_SERVER);exit;  c'st l'url /
