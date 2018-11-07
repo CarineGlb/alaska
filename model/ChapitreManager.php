@@ -27,11 +27,6 @@ Class ChapitreManager
                $chapitre ->setContent($row['content']);
                $chapitre ->setDate($row['date']);
 
-                $chapitre['id']       = $row['id'];
-                $chapitre['title']    = $row['title'];
-                $chapitre['content']  = $row['content'];
-                $chapitre['date']     = $row['date'];
-
                 $chapters[] = $chapitre;
             }
             return $chapitre;

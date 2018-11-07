@@ -35,7 +35,10 @@
 
         <?php  } ?>
     </aside>
+    <?php var_dump($chapters); ?>
+    <?php echo $chapitre->getTitle(); ?>
 </section>
+
 
 
 
