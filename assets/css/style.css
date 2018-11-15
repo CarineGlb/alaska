@@ -1,16 +1,17 @@
 @charset "UTF-8";
 
-
-font-family: 'Open Sans', sans-serif;
+html,body {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 .selector-for-some-widget {
     box-sizing: content-box;
 }
 
-.container
-{
+.container {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
+

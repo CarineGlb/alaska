@@ -4,7 +4,7 @@
 
 class Chapitre
 {
-    private $id;
+    private $id; // attributs de notre classe
     private $title;
     private $content;
     private $date;

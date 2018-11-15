@@ -16,7 +16,7 @@ while($article = $req->fetch())
 {
     $results[] = $article;
 }
-return $results;
+return $results; // tableau des resultats de la requête
 }
 
 

@@ -14,6 +14,8 @@ include_once('config.php');
 
 MyAutoload::start();
 
+//$request = $_GET['action'];
+
 //on teste le parametre action pour savoir quel controleur appeler
 
 

@@ -1,30 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset ="utf-8"/>
-	
 
-	<title>Blog de Jean Forteroche</title>
-</head>
-<body>
+<div id = "container">
 
+    <h3> Découvrir mon livre, chapitre par chapitre</h3>
 
-	<h1>Billet simple pour l'Alaska</h1>
- 
+    <?php if($chapitre->getId()): ?> <!-- j'appelle mon objet chapitre car ce n'est plus un tableau-->
+        <?php endif; ?>
 
-	<div class="chapitre">
-		
-	<h2> <?= $chapter['title']; ?> </h2> 
-	<p> <?= $chapter['content']; ?> </p>
+    <h4><?php echo $chapitre->getTitle(); ?></h4> </br>
 
+    <p> <?php echo $chapitre->getContent(); ?></p>
 
+</div>
 
-		
-	</div>
-
-
-
-
-
-</body>
-</html>

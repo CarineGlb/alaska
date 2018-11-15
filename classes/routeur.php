@@ -14,8 +14,13 @@ class Routeur
 
     private $routes =
         [
-                        'home'    => ['controller' =>'Home', 'method' =>'showHome'],
-                        'contact' => ['controller' =>'Home', 'method' =>'showContact'],
+                        'home'          => ['controller' =>'Home', 'method' =>'showHome'],
+                        'apropos'       => ['controller' =>'Home', 'method' =>'showPropos'],
+                        'chapitres'     => ['controller' =>'Home', 'method' =>'showChapitres'],
+                        'chapitre'      => ['controller' =>'Home', 'method' =>'showChapitre'],
+                        'contact'       => ['controller' =>'Home', 'method' =>'showContact'],
+                        'bibliographie' => ['controller' =>'Home', 'method' =>'showBibliographie'],
+                        'admin'         => ['controller' =>'Home', 'method' =>'showConnexion'],
         ];
 
     public function __construct($request)// on crée le construc qui recupere $request
