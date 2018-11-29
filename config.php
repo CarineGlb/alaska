@@ -14,8 +14,14 @@ class MyAutoload
         $root = $_SERVER['DOCUMENT_ROOT'];
         $host = $_SERVER['HTTP_HOST'];
 
-        define('HOST', 'http://' . $host . '/blog_alaska/');
-        define('ROOT', $root . '/blog_alaska/');
+        //echo $root; C:/laragon/www/blog_alaska/
+       // echo $host; blog_alaska.test
+
+        define('HOST', 'http://' . $host);
+        define('ROOT', $root);
+
+        /*define('HOST', 'http://' . $host . '/blog_alaska/');
+        define('ROOT', $root . '/blog_alaska/');*/
 
         define('CONTROLLER', ROOT . 'controller/');
         define('VIEW', ROOT . 'view/');
@@ -23,6 +29,7 @@ class MyAutoload
         define('CLASSES', ROOT . 'classes/');
 
         define('ASSETS', HOST . 'assets/');
+
     }
 
     public static function autoload ($class) // on passe les classes en variables. Si la classe existe on la charge

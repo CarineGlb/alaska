@@ -1,4 +1,19 @@
-<div id="container">
+<section>
+    <div class="container">
+        <div class="row justify-content-start ">
+            <div class="col-lg-12">
+
+                <img src="assets/img/contact.jpg" id="photo" class="img-fluid" alt="Responsive image"/>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<div id="container-contact">
     <h3> Vous souhaitez me contacter ?</h3></br>
 </div>
 
@@ -8,23 +23,41 @@
 </br>
 
 <form>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>Votre nom</label>
-            <input type="text" class="form-control" id="nom" placeholder="Votre nom">
-        </div>
-        <div class="form-group col-md-6">
-            <label>Votre prénom</label>
-            <input type="text" class="form-control" id="prenom" placeholder="Votre prénom">
-        </div>
-    </div>
-    <div class="form-group col-md-12">
-        <label>Votre message</label>
-        <input type="textearea" class="form-control" id="message" placeholder="Votre message" rows="6">
-    </div>
 
-    <button type="submit" class="btn btn-primary">Envoyer</button>
-</form>
+    <form class="col-lg-6">
+
+        <div class="form-group">
+
+            <label for="texte">Votre nom: </label>
+
+            <input id="text" type="text" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="texte">Votre prénom: </label>
+
+            <input id="text" type="text" class="form-control">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="textarea">Votre message : </label>
+
+            <textarea id="textarea" type="textarea" class="form-control"></textarea>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary formulaire">Envoyer</button>
+
+    </form>
+
+
+
+
 
 <!--formulaire
 

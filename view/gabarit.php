@@ -11,92 +11,130 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--css-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo ASSETS;?> style.css"/>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <script type ="texte/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type ="texte/javascript" src="http://code.jquery.com/jquery.js"></script>
     <script type ="texte/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
 
-<nav class="navbar fixed-top navbar-light bg-light">
-    <div class=""container>
+<header class="page-header">
+  <header class="col-lg-10">
+    <h1>Billet simple pour l'Alaska</h1>
+</header>
 
-        <div class="navbar navbar-default">
-            <div class=navbar-header">
+
+
+    <!--div class="row">
+            <nav class="col-lg-9">
+                <!--div class="navbar navbar-default">
+                    <div class="navbar-item">
+
+                    </div-->
+
+            <ul class="navbar fixed-top navbar-light bg-light justify-content-end">
+
                 <a class="navbar-brand" href="#">Jean Forteroche</a>
-            </div>
 
+                <ul>
+                <li class="nav-item">
+                    <a href="#">Accueil</a>
+                </li>
+                </ul>
 
-
-            <ul class="nav navbar-nav">
-
-                <li class="active"><a href="#">Accueil</a></li>
-
-                <li><a href="<?php echo HOST;?>apropos.php">A propos</a></li>
+                <ul>
+                <li class="nav-item">
+                    <a href="<?php echo HOST;?>/index.php?action=apropos">A propos</a>
+                </li>
+                </ul>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>chapitres.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/index.php?action=chapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chapitres <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li> <a href="index.php?action=chapitres"> Chapitre 1</a></li>
-                        <li> <a href="index.php?action=chapitres"> Chapitre 2</a></li>
-                        <li><a href="index.php?action=chapitres"> Chapitre 3</a></li>
-                        <li>  <a href="index.php?action=chapitres"> Chapitre 4</a></li>
+                        <li> <a href="<?php echo HOST;?>/index.php?action=chapitre&id=1"> Chapitre 1</a></li>
+                        <li> <a href="<?php echo HOST;?>/index.php?action=chapitre&id=2"> Chapitre 2</a></li>
+                        <li><a href="<?php echo HOST;?>/index.php?action=chapitres&id=3"> Chapitre 3</a></li>
+                        <li>  <a href="<?php echo HOST;?>/index.php?action=chapitres&id=4"> Chapitre 4</a></li>
                     </ul>
                 </li>
 
-                <li><a href="<?php echo HOST;?>contact.php">Contact</a></li>
+                <ul>
+                <li class="nav-item">
+                    <a href="<?php echo HOST;?>/index.php?action=contact">Contact</a>
+                </li>
+                </ul>
 
-                <li><a href="<?php echo HOST;?>bibliographie.php">Bibliographie</a></li>
+                <ul>
+                <li class="nav-item">
+                    <a href="<?php echo HOST;?>/index.php?action=bibliographie">Bibliographie</a>
+                </li>
+                </ul>
 
-                <li><a href="<?php echo HOST;?>admin.php">Connexion</a></li>
-
-             </ul>
-
-
-        </div>
-
+            </ul>
 
 </nav>
 
-<section class="container">
-
-    <header class="page-header">
-        <h1>Billet simple pour l'Alaska</h1>
-    </header>
-
-
-
-    <section>
-    <div class="container">
-        <div class="row justify-content-start ">
-            <div class="col-md-8">
-
-                <img src="assets/img/alaska_avion_recadree.jpg" id="photo" class="img-fluid" alt="Responsive image"/>
-                <button type="button" class="btn btn-info btn-lg" id="bouton">Découvrir le livre</button>
-
-            </div>
-
-        </div>
-    </div>
-    </section>
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
  <!--la page-->
 
-<?php echo $contentPage.':'?>
+<?php echo $contentPage?>
+
+    <footer>
+
+        <div class="container-fluid">
+            <ul class="foote_bottom_ul_amrc">
+                <li><a href="#">Accueil</a></li>
+
+                <li><a href="#">A propos</a></li>
+
+                <li><a href="#">Chapitres</a></li>
+
+                <li><a href="#">Bibliographie</a></li>
+
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <!--foote_bottom_ul_amrc ends here-->
+            <p class="text-center">Copyright @2017 | Réalisé par <a href="#">Carine GL Productions</a></br>
+            <p class="text-center"><a href="#">Connexion</a></p>
+            </p>
+
+
+            <ul class="social_footer_ul">
+                <li><a href="#"><img src="assets/img/twitter.png" alt="twitter"/></a></li>
+                <li><a href="#"><img src="assets/img/In-2C-14px.png" alt="linkedIn"/></a></li>
+                <li><a href="#"><img src="assets/img/instagram.png" alt="instagram"></a></li>
+            </ul>
+
+            <!--social_footer_ul ends here-->
+        </div>
+    </footer>
+
+
+    <!--footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-lg-11">
+                    <p class="text-center">Copyright @2017 | Designed by <a href="#">Carine GL Productions </a></p>
+                </div>
+                <div class=" col-lg-1">
+                    <p class="connexion"><a href="<?php echo HOST;?>admin.php">Connexion</a></p>
+                </div>
+
+            </div>
+        </div>
+
+
+</footer-->
+
 
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </html>

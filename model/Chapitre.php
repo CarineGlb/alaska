@@ -73,7 +73,4 @@ class Chapitre
         $this->date = $date;
     }
 
-
-
-
 }

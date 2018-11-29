@@ -22,9 +22,9 @@ Class ChapitreManager
         while ($row = $req->fetch())   //PDO::FETCH_ASSOC
            {
                $chapitre = new Chapitre();
-               $chapitre ->setId($row['id']); // on hydrate
-               $chapitre ->setTitle($row['title']);
-               $chapitre ->setContent($row['content']);
+               $chapitre->setId($row['id']); // on hydrate
+               $chapitre->setTitle($row['title']);
+               $chapitre->setContent($row['content']);
                //$chapitre ->setDate($row['date']);
 
                 $chapitres[] = $chapitre; // tableau d'objet
@@ -35,19 +35,18 @@ Class ChapitreManager
 
     public function find($id)
     {
-        $query = ('SELECT id,title, content FROM blog WHERE id = :id');
-        $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '');
-        $req = $bdd->prepare ($query);
+        $query = ('SELECT id,title, content  FROM blog WHERE id = :id');
+        $req = $this->bdd->prepare ($query);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
         $row = $req->fetch(PDO::FETCH_ASSOC);
 
         $chapitre = new Chapitre();
-        $chapitre ->setId($row['id']); // on hydrate
-        $chapitre ->setTitle($row['title']);
-        $chapitre ->setContent($row['content']);
+        $chapitre->setId($row['id']); // on hydrate
+        $chapitre->setTitle($row['title']);
+        $chapitre->setContent($row['content']);
 
-        return $chapitre;
+      return $chapitre;
     }
 
 

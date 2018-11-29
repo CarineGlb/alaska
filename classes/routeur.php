@@ -33,28 +33,19 @@ class Routeur
         $request = $this->request;
 
         if(key_exists($request, $this->routes)) // si la clé existe dans le tableau routes alors
-            {
+         {
                 $controller = $this->routes[$request]['controller']; // on appelle le controller egal à sthis routes request
                 $method     = $this->routes[$request]['method'];
                // include(CONTROLLER.$controller.'.php');
 
                 $currentController = new $controller(); // $controller demandé juste au dessus
                 $currentController->$method();
+          }
 
-                /*if( $request === 'home')
-                {
-                    listChapters();
-                }
-
-                elseif( $request === 'contact')
-                    {
-                        include(VIEW. 'contact.php');
-                    }*/
-            }
-            else
-            {
+        else
+        {
             echo '404';
-            }
+        }
     }
 }
 
