@@ -27,21 +27,6 @@
             </div>
        </div>
 
-       <div class="about">
-          <?php
-          foreach ($apropos as $propos)
-          {
-              echo '<p>'.$propos->getAbout().'</p>';
-          }
-
-          var_dump($apropos);
-          var_dump($propos);
-
-          ?>
-
-
-        </div>
-          <!--
                  <div class="apropos">
                      <div class="row">
                         <div class="col-lg-8">
@@ -57,4 +42,3 @@
                  </div>
 
               </section>
-          -->

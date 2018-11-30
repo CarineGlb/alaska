@@ -34,11 +34,10 @@
 
     <p>
         <?php
-        foreach ($chapitres as $chapitre)
-        {
+
             echo '<h5>'.$chapitre->getTitle().'</h5>'.'</br>';
-            echo '<p>'.$chapitre->getContent().'...'.' <a href ="<?php echo HOST;?>/index.php?action=chapitre&id="?">'.'(Lire la suite)'.'</a>'.'</p>';
-        }
+            echo '<p>'.$chapitre->getContent().'</p>';
+
         ?>
     </p>
 

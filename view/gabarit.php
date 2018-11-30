@@ -55,10 +55,12 @@
                     <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/index.php?action=chapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chapitres <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li> <a href="<?php echo HOST;?>/index.php?action=chapitre&id=1"> Chapitre 1</a></li>
-                        <li> <a href="<?php echo HOST;?>/index.php?action=chapitre&id=2"> Chapitre 2</a></li>
-                        <li><a href="<?php echo HOST;?>/index.php?action=chapitres&id=3"> Chapitre 3</a></li>
-                        <li>  <a href="<?php echo HOST;?>/index.php?action=chapitres&id=4"> Chapitre 4</a></li>
+                        <?php
+                        foreach ($chapitres as $chapitre)
+                        {
+                            echo '<li> <a href="' .  HOST . '/index.php?action=chapitre&id=' . $chapitre->getId() . '">'.$chapitre->getTitle().'</a></li>';
+                        }
+                        ?>
                     </ul>
                 </li>
 

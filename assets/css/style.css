@@ -150,12 +150,12 @@ button.btn.btn-primary.formulaire{
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-left: 310px;
 }
 
 .apropos{
-    margin-top: 100px;
+    margin-top: 80px;
 }
 
 h4.propos{

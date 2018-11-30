@@ -17,15 +17,18 @@ class Home // sert à montrer la page d'accueil
 
     public function showPropos()
     {
-        $manager = new ProposManager();
-        $propos = $manager->findAll();
+        $manager = new ChapitreManager();
+        $chapitres = $manager->findAll();
 
         $myView = new View('apropos');
-        $myView->render(array('apropos' => $propos));
+        $myView->render(array('chapitres' => $chapitres));
     }
 
    public function showChapitres()
     {
+        $manager = new ChapitreManager();
+        $chapitres = $manager->findAll();
+
         $myView = new View('chapitres');
         $myView->render(array('chapitres' => $chapitres));
     }
@@ -42,21 +45,28 @@ class Home // sert à montrer la page d'accueil
             $chapitre = new Chapitre();
 
         }
-
+     
         $myView = new View('chapitre');
-        $myView->render();
+        $myView->render(array('chapitre' => $chapitre));
     }
 
     public function showContact()
     {
+        $manager = new ChapitreManager();
+        $chapitres = $manager->findAll();
+
         $myView = new View('contact');
-        $myView->render();
+        $myView->render(array('chapitres' => $chapitres));
+
     }
 
     public function showBibliographie()
     {
+        $manager = new ChapitreManager();
+        $chapitres = $manager->findAll();
+
         $myView = new View('bibliographie');
-        $myView->render();
+        $myView->render(array('chapitres' => $chapitres));
     }
 
     public function showConnexion()
