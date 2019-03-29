@@ -19,10 +19,10 @@
     <section class ="row">
         <div class="col-lg-12">
             <ul class="bibliographie"></br>
-                <li> Un jour, un voyage (2009)</li>
-                <li> Les aventures de Tommy le Paon (2011)</li>
-                <li> L'aventure, c'est extra! (2012)</li>
-                <li> Le lion blanc de Sibérie (2014)</li>
+                <li> "Un jour, un voyage" (2009)</li>
+                <li> "Les aventures de Tommy le Paon" (2011)</li>
+                <li> "L'aventure, c'est extra!" (2012)</li>
+                <li> "Le lion blanc de Sibérie" (2014)</li>
             </ul>
         </div>
     </section>

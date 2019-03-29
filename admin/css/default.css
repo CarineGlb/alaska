@@ -8,6 +8,38 @@ html,body {
     border: 1px red dotted;
 }
 
+.container-fluid-ensemble{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 0px;
+}
+
+#navdroite.row
+{
+    margin-left:0px;
+    margin-right:0px;
+    width: 1435px;
+}
+.container-fluid
+{
+    padding-top:0;
+}
+
+.container
+{
+    max-width: 1418px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+}
+
+.col-lg-12.display-table-cell
+{
+    padding-left: 0px;
+    padding-right: 2px;
+}
+
 #menu {
     background-color: #dde3f7;
     padding: 0px;
@@ -18,6 +50,15 @@ html,body {
     text-align: center;
     margin: 10px 0px;
     font-size:25px;
+}
+
+header#nav-header.clearfix {
+    margin-top: 0px;
+}
+
+header#nav-header
+{
+    width: 1418px;
 }
 
 #nav-header {
@@ -76,4 +117,65 @@ ul{
 
 nav-header.fixed-width{
     width: 35px;
+}
+
+header.page-header h1
+{
+    visibility: hidden;
+}
+
+header.page-header
+{
+    height:0;
+}
+
+header.page-header
+{
+    height:0;
+}
+
+.page-header
+{
+    margin:0;
+}
+
+
+
+ul.navbar.fixed-top.navbar-light.bg-light.justify-content-end{
+    visibility: hidden;
+    height:0;
+    margin: 0;
+    padding:0;
+}
+
+div.menu2{
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+#menu h2{
+    text-align: left;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+ul.sous-menu{
+    margin-left: 10px;
+    padding-left: 5px;
+}
+
+div#menu.col-lg-2.display-table-cell.vertical-align-top{
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 180px;
+}
+
+header#nav-header
+{
+    top:0;
+}
+
+
+footer{
+    visibility: hidden;
 }

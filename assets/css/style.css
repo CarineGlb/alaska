@@ -38,6 +38,11 @@ ul.dropdown-menu show{
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 10px;
+}
+
+.container-chapitre{
+    margin-left: 310px;
 }
 
 @media (min-width: 768px) {
@@ -130,6 +135,7 @@ button.btn.btn-primary.formulaire{
     color: #fdfefe;
     background-color:#a3d8c6;
     border: 1px solid #a3d8c6;
+    margin-left: 0;
 }
 .chapitres {
     padding-right: 15px;
@@ -140,10 +146,20 @@ button.btn.btn-primary.formulaire{
     border: 2px solid black;
 }
 
+.affichageCommentaires
+{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 300px;
+    width : 80%;
+    height : auto;
+}
+
 .container-propos{
     margin-right: auto;
     margin-left: auto;
 }
+
 
 #container-texte-propos {
     display:flex;
@@ -216,6 +232,14 @@ li{
 .container-fluid{
     background-color: #a3d8c6;
     padding: 5px;
+}
+
+#container-contact {
+    margin-left: 300px;
+}
+
+div.form-group{
+    width: 80%;
 }
 
 .bottom_border {

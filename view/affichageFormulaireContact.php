@@ -12,53 +12,70 @@
 </section>
 
 
-
 <div id="container-contact">
     <h3> Vous souhaitez me contacter ?</h3></br>
-</div>
+
 
 <p> Vous souhaitez me poser une question sur mon livre, mes chapitres, mes aventures ?</p>
 <p> Remplissez le formulaire et je vous répondrai dans les meilleurs délais.</p>
 
 </br>
 
-<form>
 
-    <form class="col-lg-6">
+
+ <form action="<?php echo HOST;?>/index.php?action=contactvalide" method="post">
 
         <div class="form-group">
 
-            <label for="texte">Votre nom: </label>
+            <label for="nom">Votre nom: </label>
 
-            <input id="text" type="text" class="form-control">
+            <input type="text" id="nom" class="form-control" name="nom" required>
 
         </div>
 
         <div class="form-group">
 
-            <label for="texte">Votre prénom: </label>
+            <label for="prenom" >Votre prénom: </label>
 
-            <input id="text" type="text" class="form-control">
+            <input type="text" id="prenom" class="form-control" name="prenom" required>
 
         </div>
-
 
         <div class="form-group">
 
-            <label for="textarea">Votre message : </label>
+            <label for="mail">Email : </label>
 
-            <textarea id="textarea" type="textarea" class="form-control"></textarea>
+            <input type="email"  id="email" class="form-control" name="email" required>
+
 
         </div>
+
+        <div class="form-group">
+
+            <label for="Votre message">Votre message: </label>
+
+            <textarea  class="form-control"  id="message" rows="3" name="message" required></textarea>
+
+
+        </div>
+
 
         <button type="submit" class="btn btn-primary formulaire">Envoyer</button>
 
+
     </form>
 
+</div>
 
 
 
 
-<!--formulaire
 
-manque les champs obligatoires, la hauteur de saisie de texte, la page cible -->
+
+
+
+
+
+
+
+

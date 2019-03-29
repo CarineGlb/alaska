@@ -1,4 +1,9 @@
 
+<!-- Anciennement homeBlog -->
+
+
+
+
 <section>
     <div class="container">
         <div class="row justify-content-start ">
@@ -8,7 +13,7 @@
 
                 <div class="row">
                     <div class="col-md-5">
-                        <button type="button" class="btn btn-outline-secondary" id="bouton"> <a href="<?php echo HOST;?>/index.php?action=chapitres">Découvrir le livre </a></button>
+                        <button type="button" class="btn btn-outline-secondary" id="bouton"> <a href="<?php echo HOST;?>/index.php?action=accederChapitres">Découvrir le livre </a></button>
                     </div>
                 </div>
 
@@ -22,7 +27,7 @@
             <p class="bienvenue-texte"> Je suis ravi de vous accueillir sur mon blog pour partager avec vous mes dernières publications et vous faire décourvrir en avant-première les aventures de Martial,
             jeune homme engagé et moderne, en quête d'une vie meilleure, faite de découvertes sauvages et authentiques.</p></br>
 
-               <button type="button" class="btn btn-outline-secondary apropos">A propos</button></br>
+
     </div>
 
 </section>
@@ -68,10 +73,11 @@
             <div class="row">
                 <div class="col-lg-10">
                     <?php
-                    foreach ($chapitres as $chapitre)
+                   foreach ($chapitres as $key=>$chapitre) // boucle sur mon tableau de chapitres : pour chaque element de mon tableau $chapitres, prends la valeur $ chapitre
                     {
-                        echo '<h5>'.$chapitre->getTitle().'</h5>'.'</br>';
-                        echo '<p>'.$chapitre->getContent().'...'.' <a href ="<?php echo HOST;?>/index.php?action=chapitre&id="?">'.'(Lire la suite)'.'</a>'.'</p>';
+                        echo '<h5>'.$chapitre->getTitreChapitre().'</h5>'.'</br>';
+                        echo '<p>'.$chapitre->getResumeChapitre().' <a href =' . HOST ."/index.php?action=lireChapitres&idChapitre=" . $chapitre->getIdChapitre() . '>'.'(Lire la suite)'.'</a>'.'</p>';
+                        // ici action correspond au parametre decrit dans le routeur et idChapitre recupere automatiquement l'id avec le getter
                     }
                     ?>
                 </div>
@@ -82,7 +88,6 @@
 
 
 </section>
-
 
 
 

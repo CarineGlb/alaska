@@ -30,17 +30,21 @@ class MyAutoload
 
         define('ASSETS', HOST . 'assets/');
 
+
     }
 
     public static function autoload ($class) // on passe les classes en variables. Si la classe existe on la charge
     {
+
         if (file_exists(MODEL . $class . '.php')) {
             include_once(MODEL . $class . '.php');
+
         } elseif (file_exists(CLASSES . $class . '.php')) {
             include_once(CLASSES . $class . '.php');
         } elseif (file_exists(CONTROLLER . $class . '.php')) {
             include_once(CONTROLLER . $class . '.php');
         }
+
     }
 }
 

@@ -52,13 +52,14 @@
                 </ul>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/index.php?action=chapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/index.php?action=lireChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chapitres <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
+
                         foreach ($chapitres as $chapitre)
                         {
-                            echo '<li> <a href="' .  HOST . '/index.php?action=chapitre&id=' . $chapitre->getId() . '">'.$chapitre->getTitle().'</a></li>';
+                            echo '<li> <a href="' .  HOST . '/index.php?action=lireChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
                         }
                         ?>
                     </ul>
@@ -66,7 +67,7 @@
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/index.php?action=contact">Contact</a>
+                    <a href="<?php echo HOST;?>/index.php?action=formulaireContact">Contact</a>
                 </li>
                 </ul>
 
@@ -100,7 +101,7 @@
                 <li><a href="#">Contact</a></li>
             </ul>
             <!--foote_bottom_ul_amrc ends here-->
-            <p class="text-center">Copyright @2017 | Réalisé par <a href="#">Carine GL Productions</a></br>
+            <p class="text-center">Copyright @2018 | Réalisé par <a href="#">Carine GL Productions</a></p>
             <p class="text-center"><a href="#">Connexion</a></p>
             </p>
 

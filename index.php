@@ -8,8 +8,9 @@ C'est mon frontcontroller qui appellera mon controller depuis mon index
 */
 
 
-//include_once ('controller/Home.php');
+//include_once ('controller/PageAccueil.php');
 include_once('config.php');
+include_once('Debug.php');
 //include_once (CLASSES.'/routeur.php');
 
 MyAutoload::start();
@@ -25,7 +26,7 @@ if(isset($_GET['action']))
 }
 
 else{
-    $request = 'home';
+    $request = 'accueil';
 }
 
 

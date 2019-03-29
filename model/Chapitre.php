@@ -2,75 +2,78 @@
 
 // objet chapitre dans lequel on crée 1 chapitre
 
-class Chapitre
+class chapitre
 {
-    private $id; // attributs de notre classe
-    private $title;
-    private $content;
-    private $date;
+    private $_idChapitre; // attributs de notre classe
+    private $_titreChapitre;
+    private $_contenuChapitre;
+
+
+
 
     /**
      * @return mixed
      */
-    public function getId ()
+    public function getIdChapitre()
     {
-        return $this->id;
+        return $this->_idChapitre;
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $idChapitre
      */
-    public function setId ($id)
+    public function setIdChapitre($idChapitre)
     {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitle ()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle ($title)
-    {
-        $this->title = $title;
+        $this->_idChapitre = $idChapitre;
     }
 
     /**
      * @return mixed
      */
-    public function getContent ()
+    public function getTitreChapitre()
     {
-        return $this->content;
+        return $this->_titreChapitre;
     }
 
     /**
-     * @param mixed $content
+     * @param mixed $titreChapitre
      */
-    public function setContent ($content)
+    public function setTitreChapitre($titreChapitre)
     {
-        $this->content = $content;
+        $this->_titreChapitre = $titreChapitre;
     }
 
     /**
      * @return mixed
      */
-    public function getDate ()
+    public function getContenuChapitre()
     {
-        return $this->date;
+        return $this->_contenuChapitre;
     }
 
     /**
-     * @param mixed $date
+     * @param mixed $contenuChapitre
      */
-    public function setDate ($date)
+    public function setContenuChapitre($contenuChapitre)
     {
-        $this->date = $date;
+        $this->_contenuChapitre = $contenuChapitre;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getResumeChapitre()
+    {
+        $resumeChapitre = substr($this->getContenuChapitre(),0,200);
+        return $resumeChapitre. '...';
+
+    }
+
+
+
+
+
+
+
 
 }

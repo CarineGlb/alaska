@@ -1,6 +1,6 @@
 <?php
 
-//include_once (CONTROLLER.'Home.php');
+//include_once (CONTROLLER.'PageAccueil.php');
 
 /*class routeur pour créer les routes et trouver le controller. Il gère l'ensemble des choix réalisés dans l'index
 
@@ -14,13 +14,20 @@ class Routeur
 
     private $routes =
         [
-                        'home'          => ['controller' =>'Home', 'method' =>'showHome'],
-                        'apropos'       => ['controller' =>'Home', 'method' =>'showPropos'],
-                        'chapitres'     => ['controller' =>'Home', 'method' =>'showChapitres'],
-                        'chapitre'      => ['controller' =>'Home', 'method' =>'showChapitre'],
-                        'contact'       => ['controller' =>'Home', 'method' =>'showContact'],
-                        'bibliographie' => ['controller' =>'Home', 'method' =>'showBibliographie'],
-                        'admin'         => ['controller' =>'Home', 'method' =>'showConnexion'],
+                    // parametre d'action de l'url                  controleur                  methode appelee depuis le controleur
+
+                        'accueil'                          => ['controller' =>'PageAccueil',  'method' =>'accueil'],
+                        'apropos'                          => ['controller' =>'PageAccueil',  'method' =>'aPropos'],
+                        'lireChapitres'                    => ['controller' =>'PageAccueil',  'method' =>'accederChapitres'],
+                        'extraitChapitre'                  => ['controller' =>'PageAccueil',  'method' =>'lireExtraitChapitre'],
+                        'formulaireContact'                => ['controller' =>'PageAccueil',  'method' =>'formulaireContact'],
+                        'messageFormulaireValide'          => ['controller' =>'PageAccueil',  'method' =>'messageFormulaireContactValide'],
+                        'bibliographie'                    => ['controller' =>'PageAccueil',  'method' =>'bibliographie'],
+                        'connexionAdmin'                   => ['controller' =>'PageAccueil',  'method' =>'connexionAdmin'],
+                        'insertionCommentaires'            => ['controller' =>'PageAccueil',  'method' =>'insertionCommentairesBDD'],
+                        'insertionCommentaireSignale'      => ['controller' =>'PageAccueil',  'method' =>'insertionCommentaireSignaleBDD'],
+                        'lireLesCommentaires'              => ['controller' =>'PageAccueil',  'method' =>'lireTousLesCommentaires'],
+                        'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'lireCommentaireChapitre'],
         ];
 
     public function __construct($request)// on crée le construc qui recupere $request
@@ -43,7 +50,8 @@ class Routeur
           }
 
         else
-        {
+            {
+
             echo '404';
         }
     }
