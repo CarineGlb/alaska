@@ -14,11 +14,15 @@ class MyAutoload
         $root = $_SERVER['DOCUMENT_ROOT'];
         $host = $_SERVER['HTTP_HOST'];
 
-        //echo $root; C:/laragon/www/blog_alaska/
-       // echo $host; blog_alaska.test
+
+        //echo $root; // C:/xampp/htdocs
+      //  echo '-------------';
+        //echo $host; // localhost
+
+
 
         define('HOST', 'http://' . $host);
-        define('ROOT', $root);
+        define('ROOT', $root.'/blog_alaska/');
 
         /*define('HOST', 'http://' . $host . '/blog_alaska/');
         define('ROOT', $root . '/blog_alaska/');*/
@@ -32,6 +36,8 @@ class MyAutoload
 
 
     }
+
+
 
     public static function autoload ($class) // on passe les classes en variables. Si la classe existe on la charge
     {

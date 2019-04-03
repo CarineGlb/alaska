@@ -9,7 +9,8 @@ class publierDesCommentairesManager
 
     public function __construct() // on instancie $bdd au démarrage
     {
-        $this->_bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd= $this->_bdd = new PDO('mysql:host=localhost;dbname=alaska;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        return $bdd;
     }
 
 
@@ -18,33 +19,33 @@ class publierDesCommentairesManager
      * @param Commentaire $commentaire
      */
 
+    /*$req = $bdd->prepare('INSERT INTO jeux_video(nom, possesseur, console, prix, nbre_joueurs_max, commentaires) VALUES(:nom, :possesseur, :console, :prix, :nbre_joueurs_max, :commentaires)');
+$req->execute(array(
+	'nom' => $nom,
+	'possesseur' => $possesseur,
+	'console' => $console,
+	'prix' => $prix,
+	'nbre_joueurs_max' => $nbre_joueurs_max,
+	'commentaires' => $commentaires
+	));*/
+
     public function insererCommentaireBDD($commentaire)
     {
         $bdd = $this->_bdd;
 
         // preparation de la requête
 
-        $requete = $bdd->prepare('INSERT INTO commentaire(idCommentaire,pseudoCommentaire,mailCommentaire,contenuCommentaire,idChapitre) VALUES(:idCommentaire,:pseudoCommentaire,:mailCommentaire,:contenuCommentaire,:idChapitre)');
+        $requete = $bdd->prepare('INSERT INTO commentairelivre(idCommentaire,pseudoCommentaire,mailCommentaire,contenuCommentaire,idChapitre) VALUES(:idCommentaire,:pseudoCommentaire,:mailCommentaire,:contenuCommentaire,:idChapitre)');
 
 //lier les marqueurs à une valeur
-        $newCommentaire = $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
-        $newCommentaire = $requete->bindValue(':pseudoCommentaire',$commentaire->getPseudoCommentaire() , PDO::PARAM_STR);
-        $newCommentaire = $requete->bindValue(':mailCommentaire',$commentaire->getMailCommentaire() , PDO::PARAM_STR);
-        $newCommentaire = $requete->bindValue(':contenuCommentaire', $commentaire->getContenuCommentaire() ,  PDO::PARAM_STR);
-        $newCommentaire =  $requete->bindValue(':idChapitre', $commentaire->getIdChapitre() ,  PDO::PARAM_INT);
+         $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
+         $requete->bindValue(':pseudoCommentaire',$commentaire->getPseudoCommentaire() , PDO::PARAM_STR);
+         $requete->bindValue(':mailCommentaire',$commentaire->getMailCommentaire() , PDO::PARAM_STR);
+         $requete->bindValue(':contenuCommentaire', $commentaire->getContenuCommentaire() ,  PDO::PARAM_STR);
+         $requete->bindValue(':idChapitre', $commentaire->getIdChapitre() ,  PDO::PARAM_INT);
 
-        /*$insert = $requete->execute();
-        if ($insert) {
-            $message = "Commentaire ajouté";
-        } else {
-            $message = "Echec";
 
-        }*/
-        //$requete->execute();
-
-       // return $requete;
-
-        //print_r($insert);
+        $newCommentaire = $requete->execute();
 
         return $newCommentaire;
     }
@@ -53,53 +54,21 @@ class publierDesCommentairesManager
     {
         $bdd = $this->_bdd;
 
-        // preparation de la requête
+        $requete = $bdd->prepare('UPDATE commentairelivre SET commentaireSignale = commentaireSignale +1 WHERE idCommentaire= :idCommentaire');
 
-        $requete = $bdd->prepare('INSERT INTO commentaire(commentaireSignale) VALUES(:commentaireSignale)');
+        $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
 
-//lier les marqueurs à une valeur
+        $requete = execute();
 
-        $commentaireSignale =  $requete->bindValue(':commentaireSignale', $commentaire->getCommentaireSignale() ,  PDO::PARAM_INT);
+        return $requete;
 
-        /*$insert = $requete->execute();
-        if ($insert) {
-            $message = "Commentaire ajouté";
-        } else {
-            $message = "Echec";
-
-        }*/
-        //$requete->execute();
-
-        // return $requete;
-
-        //print_r($insert);
-
-        return $commentaireSignale;
     }
 
 
 
-         //---------------------------------------------------------------------------------------------
-       // $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
-
-       // $requete->bindValue(':idChapitre', $commentaire->getIdChapitre(), PDO::PARAM_INT);
-
-        /*$requete->bindValue(':pseudoCommentaire', $pseudoCommentaire, PDO::PARAM_STR);
-        $requete->bindValue(':mailCommentaire', $mailCommentaire, PDO::PARAM_STR);
-        $requete->bindValue(':contenuCommentaire', $contenuCommentaire, PDO::PARAM_STR);
 
 
-        $requete->bindValue(':mailCommentaire', $mailCommentaire->getMailCommentaire(), PDO::PARAM_STR);
-        $requete->bindValue(':contenuCommentaire', $contenuCommentaire->getContenuCommentaire(), PDO::PARAM_STR);*/
 
-
-        /*$requete->execute(array(
-            'idCommentaire'=>$_POST['idCommentaire'],
-            'pseudoCommentaire'=>$_POST['pseudoCommentaire'],
-            'mailCommentaire'=> $_POST['mailCommentaire'],
-            'contenuCommentaire'=>$_POST['contenuCommentaire'],
-            'idChapitre'=>$_GET['idChapitre'])
-             );*/
 
 
 
@@ -138,7 +107,7 @@ class publierDesCommentairesManager
 
     {
         $bdd = $this->_bdd;
-        $query = ('SELECT pseudoCommentaire, contenuCommentaire FROM commentaire WHERE idChapitre = :idChapitre ORDER BY idChapitre');
+        $query = ('SELECT pseudoCommentaire, contenuCommentaire, idCommentaire FROM commentairelivre WHERE idChapitre = :idChapitre ORDER BY idChapitre');
         $pdoStat = $bdd->prepare($query);
         $pdoStat->bindValue(':idChapitre', $idChapitre, PDO::PARAM_INT);
         $pdoStat->execute();
@@ -189,7 +158,7 @@ class publierDesCommentairesManager
 //$row = $req->fetch();
     //------sous ligne 140
        // return $tabCommentaire;
-
+*/
 
 
 
@@ -199,7 +168,7 @@ class publierDesCommentairesManager
 
     {
         $bdd = $this->_bdd;
-        $requete = $bdd->prepare('SELECT pseudoCommentaire, contenuCommentaire FROM commentaire ORDER BY idChapitre'); // whereidChapitre = lorsque
+        $requete = $bdd->prepare('SELECT pseudoCommentaire, contenuCommentaire FROM commentairelivre ORDER BY idChapitre'); // whereidChapitre = lorsque
         $requete->bindValue(':idChapitre', $idChapitre, PDO::PARAM_INT);
         $requete->execute();
 
@@ -250,7 +219,7 @@ class publierDesCommentairesManager
         /*supprime l'objet passé en argument
         retourne true ou false*/
 
-        $this->_pdoStatement = $this->_pdo->prepare('DELETE FROM commentaire WHERE id=:id LIMIT 1');
+        $this->_pdoStatement = $this->_pdo->prepare('DELETE FROM commentairelivre WHERE id=:id LIMIT 1');
 
         $this->_pdoStatement->bindValue(':id', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
 

@@ -2,44 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b5ad3f5-75db-499a-9cc6-acb1af5c1df4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/HydrateEntityCommentaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/PageAccueil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/chapitre.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/commentaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/formulaireContact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/formulaireContactManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/publierDesChapitresAvecCommentaires.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/publierDesCommentairesManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/affichageUnChapitre.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/commentaire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/commentairesdumanager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/contactvalide.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/insertion.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/menuNavigation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/nouvel_article.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/affichageCommentaireSignale.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/alaska_avion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/alaska_montagne_route.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/ecrivain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/routeur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/Home.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/chapter.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/index2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/affichageChapitreAvecCommentaire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Chapitre.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ChapitreManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/publierDesChapitresManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/apropos.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/bibliographie.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/affichageBibliographie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/chapitre.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/chapitres.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/affichageFormulaireContact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/PageAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PageAccueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Chapitre.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/chapitre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/formulaireContact.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/formulaireContact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/publierDesChapitresManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/publierDesChapitresManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/publierDesCommentairesManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/publierDesCommentairesManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/affichageUnChapitre.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/affichageUnChapitre.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/gabarit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/homeBlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/viewPageAccueil.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +116,7 @@
     <session id="1802110073">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="113" />
+          <entry key="project.closed" value="119" />
           <entry key="project.open.time.108" value="1" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.22" value="4" />
@@ -154,24 +126,26 @@
           <entry key="project.open.time.26" value="3" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.29" value="3" />
+          <entry key="project.open.time.29" value="4" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.32" value="4" />
           <entry key="project.open.time.33" value="7" />
           <entry key="project.open.time.34" value="4" />
           <entry key="project.open.time.35" value="7" />
           <entry key="project.open.time.36" value="5" />
-          <entry key="project.open.time.37" value="2" />
+          <entry key="project.open.time.37" value="3" />
           <entry key="project.open.time.38" value="6" />
           <entry key="project.open.time.39" value="6" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.40" value="2" />
+          <entry key="project.open.time.40" value="3" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.42" value="4" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.45" value="3" />
+          <entry key="project.open.time.451" value="1" />
           <entry key="project.open.time.46" value="2" />
           <entry key="project.open.time.47" value="2" />
           <entry key="project.open.time.48" value="2" />
@@ -196,7 +170,7 @@
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.77" value="1" />
           <entry key="project.open.time.79" value="1" />
-          <entry key="project.opened" value="114" />
+          <entry key="project.opened" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -204,7 +178,7 @@
           <entry key="css" value="9" />
           <entry key="html" value="2" />
           <entry key="jpg" value="1" />
-          <entry key="php" value="314" />
+          <entry key="php" value="324" />
           <entry key="png" value="1" />
           <entry key="sql" value="1" />
           <entry key="txt" value="1" />
@@ -215,7 +189,7 @@
           <entry key="CSS" value="9" />
           <entry key="HTML" value="2" />
           <entry key="Image" value="2" />
-          <entry key="PHP" value="310" />
+          <entry key="PHP" value="320" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="SQL" value="1" />
         </counts>
@@ -225,17 +199,17 @@
           <entry key="css" value="3524" />
           <entry key="dummy" value="106" />
           <entry key="html" value="113" />
-          <entry key="php" value="39609" />
-          <entry key="txt" value="22" />
+          <entry key="php" value="42735" />
+          <entry key="txt" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="3524" />
           <entry key="HTML" value="125" />
-          <entry key="PHP" value="39479" />
-          <entry key="PLAIN_TEXT" value="233" />
-          <entry key="SQL" value="13" />
+          <entry key="PHP" value="42604" />
+          <entry key="PLAIN_TEXT" value="270" />
+          <entry key="SQL" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -244,41 +218,49 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="684356497">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="2" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.39" value="1" />
+          <entry key="project.opened" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="1180" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="1180" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/commentaire.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/HydrateEntityCommentaire.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/publierDesCommentairesManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/affichageUnChapitre.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+            <state relative-caret-position="170">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -286,17 +268,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/PageAccueil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3876">
-              <caret line="228" selection-start-line="228" selection-end-line="228" />
+            <state relative-caret-position="2397">
+              <caret line="141" selection-start-line="141" selection-end-line="141" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/routeur.php">
+        <entry file="file://$PROJECT_DIR$/model/commentaire.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="136" selection-start-line="27" selection-start-column="106" selection-end-line="27" selection-end-column="136" />
+            <state relative-caret-position="952">
+              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/publierDesChapitresManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/affichageUnChapitre.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/affichageCommentaireSignale.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -343,8 +352,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/addCommentaires.php" />
-        <option value="$PROJECT_DIR$/view/formulaireCommentaires.php" />
         <option value="$PROJECT_DIR$/model/ConnexionBaseCommentaires.php" />
         <option value="$PROJECT_DIR$/view/commentaires.php" />
         <option value="$PROJECT_DIR$/model/Comment.php" />
@@ -379,21 +386,23 @@
         <option value="$PROJECT_DIR$/model/publierDesChapitresAvecCommentaires.php" />
         <option value="$PROJECT_DIR$/model/publierUnChapitre.php" />
         <option value="$PROJECT_DIR$/model/publierUnCommentaire.php" />
-        <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/view/viewPageAccueil.php" />
-        <option value="$PROJECT_DIR$/view/gabarit.php" />
         <option value="$PROJECT_DIR$/model/chapitre.php" />
         <option value="$PROJECT_DIR$/view/formulaireEcrireCommentaire.php" />
         <option value="$PROJECT_DIR$/view/affichageChapitreAvecCommentaire.php" />
-        <option value="$PROJECT_DIR$/model/publierDesChapitresManager.php" />
         <option value="$PROJECT_DIR$/classes/AbstractEntity.php" />
         <option value="$PROJECT_DIR$/classes/HydrateEntity.php" />
         <option value="$PROJECT_DIR$/classes/HydrateEntityCommentaire.php" />
         <option value="$PROJECT_DIR$/model/commentaire.php" />
-        <option value="$PROJECT_DIR$/model/publierDesCommentairesManager.php" />
+        <option value="$PROJECT_DIR$/model/formulaireContact.php" />
+        <option value="$PROJECT_DIR$/view/affichageCommentaireSignale.php" />
         <option value="$PROJECT_DIR$/classes/routeur.php" />
-        <option value="$PROJECT_DIR$/controller/PageAccueil.php" />
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/view/gabarit.php" />
         <option value="$PROJECT_DIR$/view/affichageUnChapitre.php" />
+        <option value="$PROJECT_DIR$/model/publierDesChapitresManager.php" />
+        <option value="$PROJECT_DIR$/controller/PageAccueil.php" />
+        <option value="$PROJECT_DIR$/model/publierDesCommentairesManager.php" />
       </list>
     </option>
   </component>
@@ -406,6 +415,7 @@
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="803" />
     <option name="height" value="920" />
   </component>
@@ -478,7 +488,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="homeBlog&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/laragon/www/blog_alaska" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -666,7 +676,20 @@
       <workItem from="1553762401733" duration="3980000" />
       <workItem from="1553778837159" duration="3506000" />
       <workItem from="1553847643921" duration="595000" />
-      <workItem from="1553864424277" duration="498000" />
+      <workItem from="1553864424277" duration="8154000" />
+      <workItem from="1553951693764" duration="1437000" />
+      <workItem from="1554036380513" duration="8374000" />
+      <workItem from="1554100936225" duration="694000" />
+      <workItem from="1554102529211" duration="2549000" />
+      <workItem from="1554120771041" duration="642000" />
+      <workItem from="1554124926519" duration="1003000" />
+      <workItem from="1554145031219" duration="2165000" />
+      <workItem from="1554190945770" duration="3832000" />
+      <workItem from="1554206081635" duration="1442000" />
+      <workItem from="1554207735627" duration="1979000" />
+      <workItem from="1554210242054" duration="1546000" />
+      <workItem from="1554230104810" duration="2148000" />
+      <workItem from="1554292592029" duration="354000" />
     </task>
     <task id="LOCAL-00001" summary="Modifications fichier outeur, index, cntroller avec tutorat du 05/11">
       <created>1541428740916</created>
@@ -689,11 +712,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542288939754</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=" Chapitres et commentaires en ligne">
+      <created>1553865064435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553865064435</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="495953000" />
+    <option name="totallyTimeSpent" value="531774000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -708,7 +738,7 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21465296" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25321338" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -740,23 +770,10 @@
     <MESSAGE value="Modifications fichier outeur, index, cntroller avec tutorat du 05/11" />
     <MESSAGE value="correction syntaxe objet dans findAll" />
     <MESSAGE value="   paramètres de vue en controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="   paramètres de vue en controller" />
+    <MESSAGE value=" Chapitres et commentaires en ligne" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Chapitres et commentaires en ligne" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/carine ordi du bas/dossiers www/tests/exemple.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/carine ordi du bas/dossiers www/tp2/minichat_post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/carine ordi du bas/dossiers www/tp2/minichat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -786,13 +803,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../chien.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../chien.php" />
     <entry file="file://$PROJECT_DIR$/admin/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -841,20 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/menuNavigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/affichageFormulaireContact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -876,20 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/affichageAPropos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/formulaireContact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/formulaireContactManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -901,13 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/gabarit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="65" selection-start-line="75" selection-start-column="65" selection-end-line="75" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -932,31 +908,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/affichageChapitreAvecCommentaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Debug.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/publierDesChapitresManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -967,13 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/chapitre.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -981,6 +929,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/view/affichageFormulaireContact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="938">
+          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/formulaireContact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/affichageChapitreAvecCommentaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Exercice Chenil/Manager.php" />
     <entry file="file://$PROJECT_DIR$/classes/View.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -988,10 +958,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/commentaire.php">
+    <entry file="file://$PROJECT_DIR$/view/menuNavigation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+        <state relative-caret-position="1564">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/affichageAPropos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gabarit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="98" selection-start-line="49" selection-start-column="98" selection-end-line="49" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1002,31 +1000,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/routeur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model/publierDesCommentairesManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/PageAccueil.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3876">
-          <caret line="228" selection-start-line="228" selection-end-line="228" />
+        <state relative-caret-position="2397">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/routeur.php">
+    <entry file="file://$PROJECT_DIR$/model/commentaire.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="136" selection-start-line="27" selection-start-column="106" selection-end-line="27" selection-end-column="136" />
+        <state relative-caret-position="952">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/publierDesChapitresManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/affichageUnChapitre.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+        <state relative-caret-position="867">
+          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/affichageCommentaireSignale.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>

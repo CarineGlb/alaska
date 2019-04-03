@@ -2,16 +2,16 @@
 
 class formulaireContact{
 
-    private $nom;
-    private $prenom;
-    private $message;
+    private $_nom;
+    private $_prenom;
+    private $_message;
 
     /**
      * @return mixed
      */
     public function getNom()
     {
-        return $this->nom;
+        return $this->_nom;
     }
 
     /**
@@ -19,7 +19,7 @@ class formulaireContact{
      */
     public function setNom($nom)
     {
-        $this->nom = $nom;
+        $this->_nom = $nom;
     }
 
     /**
@@ -27,7 +27,7 @@ class formulaireContact{
      */
     public function getPrenom()
     {
-        return $this->prenom;
+        return $this->_prenom;
     }
 
     /**
@@ -35,7 +35,7 @@ class formulaireContact{
      */
     public function setPrenom($prenom)
     {
-        $this->prenom = $prenom;
+        $this->_prenom = $prenom;
     }
 
     /**
@@ -43,7 +43,7 @@ class formulaireContact{
      */
     public function getMessage()
     {
-        return $this->message;
+        return $this->_message;
     }
 
     /**
@@ -51,7 +51,7 @@ class formulaireContact{
      */
     public function setMessage($message)
     {
-        $this->message = $message;
+        $this->_message = $message;
     }
 
 

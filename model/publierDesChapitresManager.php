@@ -9,14 +9,14 @@ class publierDesChapitresManager
 
     public function __construct() // on instancie $bdd au démarrage
     {
-        $this->_bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $this->_bdd = new PDO('mysql:host=localhost;dbname=alaska;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
 
 
     public function publierTousLesChapitres() // fait la requete
     {
         $bdd = $this->_bdd;
-        $requete = $bdd->prepare('SELECT idChapitre,titreChapitre,contenuChapitre FROM chapitre ORDER BY idChapitre');
+        $requete = $bdd->prepare('SELECT idChapitre,titreChapitre,contenuChapitre FROM livre ORDER BY idChapitre');
         $requete->execute();
         while($donnees = $requete->fetch()) // si je ne crée pas de boucles avec while mon tableau contiendra uniquement 1 ligne et ne pourra pas affichert ous mes chapitres
         {
@@ -34,7 +34,7 @@ class publierDesChapitresManager
     public function getChapitre($idChapitre) // pour afficher un chapitre
     {
 
-        $query = ('SELECT idChapitre,titreChapitre,contenuChapitre FROM chapitre WHERE idChapitre = :idChapitre'); // where=lorsque
+        $query = ('SELECT idChapitre,titreChapitre,contenuChapitre FROM livre WHERE idChapitre = :idChapitre'); // where=lorsque
         $req = $this->_bdd->prepare ($query);
         $req->bindValue(':idChapitre', $idChapitre, PDO::PARAM_INT);
         $req->execute();

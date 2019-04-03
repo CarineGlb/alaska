@@ -47,19 +47,19 @@
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/index.php?action=apropos">A propos</a>
+                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=apropos">A propos</a>
                 </li>
                 </ul>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/index.php?action=lireChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/blog_alaska/index.php?action=lireChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chapitres <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
 
                         foreach ($chapitres as $chapitre)
                         {
-                            echo '<li> <a href="' .  HOST . '/index.php?action=lireChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
+                            echo '<li> <a href="' .  HOST . '/blog_alaska/index.php?action=lireChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
                         }
                         ?>
                     </ul>
@@ -67,13 +67,13 @@
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/index.php?action=formulaireContact">Contact</a>
+                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=formulaireContact">Contact</a>
                 </li>
                 </ul>
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/index.php?action=bibliographie">Bibliographie</a>
+                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=bibliographie">Bibliographie</a>
                 </li>
                 </ul>
 
@@ -124,7 +124,7 @@
                     <p class="text-center">Copyright @2017 | Designed by <a href="#">Carine GL Productions </a></p>
                 </div>
                 <div class=" col-lg-1">
-                    <p class="connexion"><a href="<?php echo HOST;?>admin.php">Connexion</a></p>
+                    <p class="connexion"><a href="<?php echo HOST;?>/blog_alaska/admin.php">Connexion</a></p>
                 </div>
 
             </div>
