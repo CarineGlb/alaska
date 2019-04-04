@@ -8,7 +8,7 @@ class commentaire extends HydrateEntityCommentaire
     private $_contenuCommentaire;
     private $_mailCommentaire;
     private $_idChapitre;
-    private $_commentaireSignale;
+    private $_commentaireSignale = +1;
 
     /**
      * @return mixed

@@ -9,8 +9,8 @@ class publierDesCommentairesManager
 
     public function __construct() // on instancie $bdd au démarrage
     {
-        $bdd= $this->_bdd = new PDO('mysql:host=localhost;dbname=alaska;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        return $bdd;
+        $this->_bdd = new PDO('mysql:host=localhost;dbname=alaska;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        //return $bdd;
     }
 
 
@@ -51,18 +51,26 @@ $req->execute(array(
     }
 
     public function insererCommentaireSignaleBDD($commentaire)
-    {
-        $bdd = $this->_bdd;
 
-        $requete = $bdd->prepare('UPDATE commentairelivre SET commentaireSignale = commentaireSignale +1 WHERE idCommentaire= :idCommentaire');
+        {
 
-        $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
+            $bdd = $this->_bdd;
 
-        $requete = execute();
+            $requete = $bdd->prepare('UPDATE commentairelivre SET commentaireSignale = commentaireSignale+1 WHERE idCommentaire= :idCommentaire'); // verif dans sql est ok
 
-        return $requete;
+            $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
 
-    }
+            //var_dump($commentaire);
+
+            //$requete->bindValue(':commentaireSignale', $commentaire->getCommentaireSignale(), PDO::PARAM_INT);
+
+            $signaler = $requete->execute();
+
+            return $signaler ;
+
+        }
+
+
 
 
 
@@ -112,9 +120,11 @@ $req->execute(array(
         $pdoStat->bindValue(':idChapitre', $idChapitre, PDO::PARAM_INT);
         $pdoStat->execute();
 
+        $tabCommentaire= array();
+
         while ($results= $pdoStat->fetch(PDO::FETCH_ASSOC))
         {
-            $tabCommentaire[] = new commentaire($results);
+            $tabCommentaire = new commentaire($results);
         }
 
         return $tabCommentaire;
@@ -160,6 +170,18 @@ $req->execute(array(
        // return $tabCommentaire;
 */
 
+    public function getCommentaire($idCommentaire)
+    {
+        $bdd=$this->_bdd;
+
+        $query = ('SELECT*FROM commentairelivre WHERE idCommentaire=:idCommentaire');
+
+        $pdoStat = $bdd->prepare($query);
+        $pdoStat->bindValue(':idCommentaire', $idCommentaire, PDO::PARAM_INT);
+        $pdoStat->execute();
+
+        return new commentaire($pdoStat->fetch(PDO::FETCH_ASSOC));
+    }
 
 
 
