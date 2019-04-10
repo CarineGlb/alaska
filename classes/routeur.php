@@ -28,6 +28,9 @@ class Routeur
                         'insertionCommentaireSignale'      => ['controller' =>'PageAccueil',  'method' =>'insertionCommentaireSignaleBDD'],
                         'lireLesCommentaires'              => ['controller' =>'PageAccueil',  'method' =>'lireTousLesCommentaires'],
                         'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'lireCommentaireChapitre'],
+                        'tableauBordAdmin'                 => ['controller' =>'PageAdmin',    'method' =>'accueilAdmin'],
+                        'tableauCommentaireAdmin'          => ['controller' =>'PageAdmin',    'method' =>'adminValidationCommentaires'],
+                        'tableauContenuAdmin'              => ['controller' =>'PageAdmin',    'method' =>'adminContenuChapitres']
         ];
 
     public function __construct($request)// on crée le construc qui recupere $request

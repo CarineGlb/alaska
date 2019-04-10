@@ -21,8 +21,7 @@
 
 <body>
 
-<header class="page-header">
-  <header class="col-lg-10">
+<header class="page-header col-lg-10">
     <h1>Billet simple pour l'Alaska</h1>
 </header>
 
@@ -102,7 +101,7 @@
             </ul>
             <!--foote_bottom_ul_amrc ends here-->
             <p class="text-center">Copyright @2018 | Réalisé par <a href="#">Carine GL Productions</a></p>
-            <p class="text-center"><a href="#">Connexion</a></p>
+            <p class="text-center"><a href=<?php echo HOST;?>/blog_alaska/index.php?action=tableauBordAdmin>Connexion</a></p>
             </p>
 
 

@@ -13,7 +13,7 @@ class publierDesChapitresManager
     }
 
 
-    public function publierTousLesChapitres() // fait la requete
+    public function getListeChapitres()//publierTousLesChapitres() // fait la requete
     {
         $bdd = $this->_bdd;
         $requete = $bdd->prepare('SELECT idChapitre,titreChapitre,contenuChapitre FROM livre ORDER BY idChapitre');

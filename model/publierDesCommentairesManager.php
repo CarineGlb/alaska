@@ -29,7 +29,7 @@ $req->execute(array(
 	'commentaires' => $commentaires
 	));*/
 
-    public function insererCommentaireBDD($commentaire)
+    public function insertCommentaire($commentaire) //insererCommentaireBDD($commentaire)
     {
         $bdd = $this->_bdd;
 
@@ -50,7 +50,7 @@ $req->execute(array(
         return $newCommentaire;
     }
 
-    public function insererCommentaireSignaleBDD($commentaire)
+    public function insertCommentaireSignale($commentaire) //insererCommentaireSignaleBDD($commentaire)
 
         {
 
@@ -111,7 +111,7 @@ $req->execute(array(
         }
     }*/
 
-    public function lireCommentaire($idChapitre)
+    public function getListeCommentaires($idChapitre)//lireCommentaire($idChapitre)
 
     {
         $bdd = $this->_bdd;
@@ -120,11 +120,9 @@ $req->execute(array(
         $pdoStat->bindValue(':idChapitre', $idChapitre, PDO::PARAM_INT);
         $pdoStat->execute();
 
-        $tabCommentaire= array();
-
         while ($results= $pdoStat->fetch(PDO::FETCH_ASSOC))
         {
-            $tabCommentaire = new commentaire($results);
+            $tabCommentaire[] = new commentaire($results);
         }
 
         return $tabCommentaire;
