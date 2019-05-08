@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b5ad3f5-75db-499a-9cc6-acb1af5c1df4" name="Default Changelist" comment="Modifications fichier outeur, index, cntroller avec tutorat du 05/11">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3b5ad3f5-75db-499a-9cc6-acb1af5c1df4" name="Default Changelist" comment="partie admin : avancement mise à jour chapitres et commentaires" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +210,7 @@
     <session id="684356497">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="51" />
+          <entry key="project.closed" value="52" />
           <entry key="project.open.time.106" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="3" />
@@ -262,14 +260,14 @@
           <entry key="css" value="758" />
           <entry key="dummy" value="17" />
           <entry key="php" value="22821" />
-          <entry key="txt" value="199" />
+          <entry key="txt" value="262" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="758" />
           <entry key="PHP" value="22821" />
-          <entry key="PLAIN_TEXT" value="216" />
+          <entry key="PLAIN_TEXT" value="279" />
         </counts>
       </usages-collector>
     </session>
@@ -324,8 +322,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/PageAdmin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+            <state relative-caret-position="456">
+              <caret line="191" column="63" lean-forward="true" selection-start-line="191" selection-start-column="63" selection-end-line="191" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -778,7 +776,7 @@
       <workItem from="1557216258252" duration="1346000" />
       <workItem from="1557303233720" duration="2265000" />
       <workItem from="1557329704509" duration="2855000" />
-      <workItem from="1557338710569" duration="965000" />
+      <workItem from="1557338710569" duration="1105000" />
     </task>
     <task id="LOCAL-00001" summary="Modifications fichier outeur, index, cntroller avec tutorat du 05/11">
       <created>1541428740916</created>
@@ -829,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557338916988</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Modifications fichier outeur, index, cntroller avec tutorat du 05/11">
+      <created>1557339740513</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1557339740513</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="724516000" />
+    <option name="totallyTimeSpent" value="724656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -846,7 +851,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2667095" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -861,7 +865,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32884097" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32884097" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32884097" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32963374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -873,18 +877,28 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modifications fichier outeur, index, cntroller avec tutorat du 05/11" />
     <MESSAGE value="correction syntaxe objet dans findAll" />
     <MESSAGE value="   paramètres de vue en controller" />
     <MESSAGE value=" Chapitres et commentaires en ligne" />
     <MESSAGE value="Mise à jour base commentaires et update commentaire signale" />
     <MESSAGE value="Affichage liste commentaires dans partie admin avec configuration dashboard" />
     <MESSAGE value="partie admin : mise à jour chapitres et signalement commentaires" />
-    <option name="LAST_COMMIT_MESSAGE" value="partie admin : mise à jour chapitres et signalement commentaires" />
+    <MESSAGE value="Modifications fichier outeur, index, cntroller avec tutorat du 05/11" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifications fichier outeur, index, cntroller avec tutorat du 05/11" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/view/contactvalide.php">
@@ -1159,8 +1173,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/PageAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
+        <state relative-caret-position="456">
+          <caret line="191" column="63" lean-forward="true" selection-start-line="191" selection-start-column="63" selection-end-line="191" selection-end-column="63" />
         </state>
       </provider>
     </entry>
