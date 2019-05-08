@@ -18,19 +18,26 @@ class Routeur
 
                         'accueil'                          => ['controller' =>'PageAccueil',  'method' =>'accueil'],
                         'apropos'                          => ['controller' =>'PageAccueil',  'method' =>'aPropos'],
-                        'lireChapitres'                    => ['controller' =>'PageAccueil',  'method' =>'accederChapitres'],
-                        'extraitChapitre'                  => ['controller' =>'PageAccueil',  'method' =>'lireExtraitChapitre'],
+                        'getChapitres'                     => ['controller' =>'PageAccueil',  'method' =>'getChapitres'],
+                        'extraitChapitre'                  => ['controller' =>'PageAccueil',  'method' =>'lireExtraitChapitre'],//extraitChapitre
                         'formulaireContact'                => ['controller' =>'PageAccueil',  'method' =>'formulaireContact'],
                         'messageFormulaireValide'          => ['controller' =>'PageAccueil',  'method' =>'messageFormulaireContactValide'],
                         'bibliographie'                    => ['controller' =>'PageAccueil',  'method' =>'bibliographie'],
-                        'connexionAdmin'                   => ['controller' =>'PageAccueil',  'method' =>'connexionAdmin'],
-                        'insertionCommentaires'            => ['controller' =>'PageAccueil',  'method' =>'insertionCommentairesBDD'],
-                        'insertionCommentaireSignale'      => ['controller' =>'PageAccueil',  'method' =>'insertionCommentaireSignaleBDD'],
-                        'lireLesCommentaires'              => ['controller' =>'PageAccueil',  'method' =>'lireTousLesCommentaires'],
-                        'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'lireCommentaireChapitre'],
-                        'tableauBordAdmin'                 => ['controller' =>'PageAdmin',    'method' =>'accueilAdmin'],
-                        'tableauCommentaireAdmin'          => ['controller' =>'PageAdmin',    'method' =>'adminValidationCommentaires'],
-                        'tableauContenuAdmin'              => ['controller' =>'PageAdmin',    'method' =>'adminContenuChapitres']
+                        'insertionCommentaires'            => ['controller' =>'PageAccueil',  'method' =>'insertCommentaires'],//insertCommentaires
+                        'insertionCommentaireSignale'      => ['controller' =>'PageAccueil',  'method' =>'insertSignalementCommentaires'],//insertSignalementCommentaires
+                        'lireLesCommentaires'              => ['controller' =>'PageAccueil',  'method' =>'getCommentaires'],//getCommentaires
+                        'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'getCommentaireChapitre'],//getCommentaireChapitre
+         /*connexionAdmin*/ 'connexionAdmin'               => ['controller' =>'PageAdmin',    'method' =>'connexionAdmin'],
+                        'tableauBordAdmin'                 => ['controller' =>'PageAdmin',    'method' =>'tableauBordAdmin'],
+                        'listCommentaires'                 => ['controller' =>'PageAdmin',    'method' =>'listCommentaires'],//listCommentaires
+                        'listChapitres'                    => ['controller' =>'PageAdmin',    'method' =>'listChapitres'],//listChapitres
+                        'suppressionCommentaire'           => ['controller' =>'PageAdmin',    'method' =>'deleteCommentaire'],//deleteCommentaire
+                        'signalementCommentaire'           => ['controller' =>'PageAdmin',    'method' =>'updateSignalementCommentaire'],//updateCommentaire
+                        'tableauChapitreAdmin'             => ['controller' =>'PageAdmin',    'method' =>'listChapitres'],//listChapitres
+                        'ajouterChapitre'                  => ['controller' =>'PageAdmin',    'method' =>'addChapitre'],//addChapitre
+                        'modifierChapitre'                 => ['controller' =>'PageAdmin',    'method' =>'updateChapitre'],//updateChapitre
+                        'suppressionChapitre'              => ['controller' =>'PageAdmin',    'method' =>'deleteChapitre'],//deleteChapitre
+                        'deleteChapitreEtCommentaires'     => ['controller' =>'PageAdmin',    'method' =>'deleteChapitreEtCommentaires']
         ];
 
     public function __construct($request)// on crée le construc qui recupere $request

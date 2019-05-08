@@ -75,8 +75,8 @@
                     <?php
                    foreach ($chapitres as $key=>$chapitre) // boucle sur mon tableau de chapitres : pour chaque element de mon tableau $chapitres, prends la valeur $ chapitre
                     {
-                        echo '<h5>'.$chapitre->getTitreChapitre().'</h5>'.'</br>';
-                        echo '<p>'.$chapitre->getResumeChapitre().' <a href =' . HOST ."/index.php?action=lireChapitres&idChapitre=" . $chapitre->getIdChapitre() . '>'.'(Lire la suite)'.'</a>'.'</p>';
+                        echo '<h5>'.$chapitre->getTitreChapitre().'</h5>';
+                        echo '<p>'.$chapitre->getResumeChapitre().' <a href =' . HOST ."/index.php?action=lireChapitres&idChapitre=" . $chapitre->getIdChapitre() . '>'.'(Lire la suite)'.'</a></p><br/>';
                         // ici action correspond au parametre decrit dans le routeur et idChapitre recupere automatiquement l'id avec le getter
                     }
                     ?>

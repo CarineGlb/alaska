@@ -8,53 +8,46 @@ class PageAccueil // sert à montrer la page d'accueil
 {
     public function accueil()
     {
-        $manager = new publierDesChapitresManager();
-        $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
+        $chapitreManager = new chapitreManager();
+        //$idChapitre = $_GET['idChapitre'];
+        $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('viewPageAccueil'); // mm noms que les fichiers de ma vue
-        $myView->render(array('chapitres' => $chapitres)); // c'est une variable qui appelle une autre variable
+        $myView->render(array(
+            'chapitres' => $chapitres,
+
+            )); // c'est une variable qui appelle une autre variable
     }
 
     public function aPropos()
     {
-        $manager = new publierDesChapitresManager();
-        $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
+        $chapitreManager = new chapitreManager();
+        $idChapitre = $_GET['idChapitre'];
+        $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('affichageAPropos');
         $myView->render(array('chapitres' => $chapitres));
     }
 
-    // ATTENTION $lireChapitres et $idChapitre n'ont pas ete definies. je dois les déclarer ici dans la fonction en appelant la fonction du model dans laquelle
+    // ATTENTION $getChapitres et $idChapitre n'ont pas ete definies. je dois les déclarer ici dans la fonction en appelant la fonction du model dans laquelle
     //elles ont défnies sinon je dois la créer avec par ex $idChapitre = $_POST['idChapitre']
 
+//getChapitres à la place de lireChapitres
 
-    public function accederChapitres($messageResultat = '') // j'ai passé un parametre et si appelle cette fonction sans passer de variable se sera soit rempli avec la variable ou chaine vide
+    public function getChapitres($messageResultat = '') // j'ai passé un parametre et si appelle cette fonction sans passer de variable se sera soit rempli avec la variable ou chaine vide
     {
         if (isset($_GET['idChapitre']))
         {
-            echo 'XXXXXXXXXXXXXXXXXX';
-
             $idChapitre = $_GET['idChapitre']; // renommer $idChapitre
 
-            $manager = new publierDesChapitresManager();
-            $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
+            $chapitreManager = new chapitreManager();
+            $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
-            $unChapitre = $manager->getChapitre($idChapitre);
+            $unChapitre = $chapitreManager->getChapitre($idChapitre);
 
-            echo 'YYYYYYYYYYYYYYYYYYY';
+            $commentaireManager = new commentaireManager();
 
-            $lireCommentairesChapitre = new publierDesCommentairesManager();
-
-            $commentaires= $lireCommentairesChapitre->getListeCommentaires($idChapitre);
-
-
-              //$manager = new publierDesChapitresManager();
-                //$chapitres = $manager->publierTousLesChapitres();// idChapitre en parametre
-
-                //$managerComment = new publierDesCommentairesManager();
-                // $commentaires = $managerComment->lireTousLesCommentaires();
-
-                //$this->accederChapitres();
+            $commentaires= $commentaireManager->getListeCommentaires($idChapitre);
 
         }
          else
@@ -66,22 +59,9 @@ class PageAccueil // sert à montrer la page d'accueil
         $myView->render(array(
             'chapitres' => $chapitres,
             'unChapitre' => $unChapitre,
-            'lireCommentairesChapitre'=> $lireCommentairesChapitre,
+            //'lireCommentairesChapitre'=> $lireCommentairesChapitre,
             'commentaires'=>$commentaires,
             'messageResultat'=>$messageResultat));
-
-        //$managerCommentaire = new publierDesCommentairesManager();
-            //$lireCommentaires = $managerCommentaire->lireTousLesCommentaires($commentaire);
-
-           // var_dump($lireCommentaires);
-
-         /*else {
-            $chapitre = new publierDesChapitresManager();
-            $autreChapitre = $chapitre->publierTousLesChapitres();
-            $tabCommentaire=array();
-
-        }*/
-
 
     }
 
@@ -89,18 +69,18 @@ class PageAccueil // sert à montrer la page d'accueil
     {
         if (isset($_GET['idChapitre'])) {
             $idChapitre = $_GET['idChapitre']; // renommer $idChapitre
-            $manager = new publierDesChapitresManager();
+            $manager = new chapitreManager();
 
             $chapitres = $manager->publierTousLesChapitres();
             $lireUnChapitre = $manager->publierUnChapitre();
 
 
-            $managerComment = new publierDesCommentairesManager();
+            $managerComment = new commentaireManager();
             $tabCommentaire = $managerComment->lireCommentaire($idChapitre);// idChapitre en parametre
 
 
         } else {
-            $chapitre = new publierDesChapitresManager();
+            $chapitre = new chapitreManager();
             $unChapitre = $chapitre->publierTousLesChapitres();
             $tabCommentaire=array();
 
@@ -112,28 +92,21 @@ class PageAccueil // sert à montrer la page d'accueil
 
     //   'insertionCommentaires'            => ['controller' =>'PageAccueil',  'method' =>'insertionCommentairesBDD'],
 
-    public function insertionCommentairesBDD()
+    public function insertCommentaires() // avant insertionCommentairesBDD
     {
 
-        echo 'AAAAA';
-        if (isset($_GET['idChapitre']))
-        {
+        if (isset($_GET['idChapitre'])) {
+            if ($_POST != null) {
 
-            echo 'BBBBBBB';
-            if ($_POST != null)
-            {
-
-                echo 'CCCCCCCCCCCC';
-                $manager = new publierDesChapitresManager();
-                $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
-
+                $chapitreManager = new chapitreManager();
                 $idChapitre = $_GET['idChapitre'];
+                $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
-                $unChapitre = $manager->getChapitre($idChapitre);
+                $unChapitre = $chapitreManager->getChapitre($idChapitre);
 
                 $idCommentaire = $_GET['idCommentaire'];
 
-                $insererCommentaireManager = new publierDesCommentairesManager();
+                $commentaireManager = new commentaireManager();
 
                 $commentaire = new commentaire($idChapitre); // mon objet $sommentaire est mon entité commentaire
                 $commentaire->setIdCommentaire($idCommentaire);
@@ -142,34 +115,30 @@ class PageAccueil // sert à montrer la page d'accueil
                 $commentaire->setMailCommentaire($_POST['mailCommentaire']);
                 $commentaire->setIdChapitre($_GET['idChapitre']);
 
-                $insererCommentaireManager-> insertCommentaire($commentaire);// insererCommentaireBDD($commentaire);
+                $commentaireManager->insertCommentaire($commentaire);// insererCommentaireBDD($commentaire);
 
 
-                $commentaires= $insererCommentaireManager->getListeCommentaires($idChapitre);
+                $commentaires = $commentaireManager->getListeCommentaires($idChapitre);
+
+                $messageResultat = '';
+                if ($commentaires) {
+                    $messageResultat = 'Votre commentaire a été ajouté.';
+                }
 
 
-                echo 'Votre commentaire a bien été ajouté <br/>';
+                $myView = new View('affichageUnChapitre');
+                $myView->render(array(
+                    'chapitres' => $chapitres,
+                    'unChapitre' => $unChapitre,
+                    //'insererCommentaireManager' => $insererCommentaireManager,
+                    'commentaires' => $commentaires,
+                    'messageResultat' => $messageResultat
+                    // 'lireCommentaires'=>$lireCommentaires
+                ));
             }
-
-            else
-            {
-                echo 'Erreur';
-            }
-
-
         }
-
-
-        $myView = new View('affichageUnChapitre');
-        $myView->render(array(
-            'chapitres' => $chapitres,
-            'unChapitre' => $unChapitre,
-            'insererCommentaireManager'=>$insererCommentaireManager,
-            'commentaires'=>$commentaires,
-           // 'lireCommentaires'=>$lireCommentaires
-        ));
-           // 'commentaire'=>$commentaire,
-
+        // 'commentaire'=>$commentaire,
+    }
             //'pseudoCommentaire'=>$pseudoCommentaire,
             //'mailCommentaire'=>$mailCommentaire,
            // 'contenuCommentaire'=>$contenuCommentaire)
@@ -177,18 +146,19 @@ class PageAccueil // sert à montrer la page d'accueil
 
 
 //'commentaire'=>$commentaire dans $myView ?
-    }
 
 
-    public function insertionCommentaireSignaleBDD()
+
+    public function insertSignalementCommentaires() //avant insertionCommentaireSignaleBDD
     {
 
-        if (isset($_GET['idCommentaire'])) {
+        if (isset($_GET['idCommentaire']))
+        {
 
             $idCommentaire = $_GET['idCommentaire'];
 
             // instancie les managers
-            $commentaireManager = new publierDesCommentairesManager();
+            $commentaireManager = new commentaireManager();
 
             // signalement du commentaire
             $commentaire = $commentaireManager->getCommentaire($idCommentaire);
@@ -201,13 +171,13 @@ class PageAccueil // sert à montrer la page d'accueil
             }
         }
 
-        $this->accederChapitres($messageResultat);
+        $this->getChapitres($messageResultat);
     }
 
 
 //'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'lireCommentaireChapitre'],
 
-    public function lireCommentaireChapitre()
+    public function getCommentaireChapitre() //avant lireCommentaireChapitre
     {
         if (isset($_GET['idChapitre']))
         {
@@ -215,20 +185,19 @@ class PageAccueil // sert à montrer la page d'accueil
 
             echo 'FFFFFFFFF';
 
-            $manager = new publierDesChapitresManager();
-            $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
+            $chapitreManager = new chapitreManager();
+            $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
             echo 'GGGGGGGGGGG';
 
             $commentaire = new commentaire($idChapitre);
-            $manager = new publierDesChapitresManager();
-            $unChapitre = $manager->getChapitre(idChapitre);
+            $unChapitre = $chapitreManager->getChapitre($idChapitre);
 
             echo 'HHHHHHHHHHHH';
 
 
-            $managerComment = new publierDesCommentairesManager();
-            $lireCommentaireParChapitre = $managerComment->lireTousLesCommentaires();// idChapitre en parametre
+            $commentaireManager = new commentaireManager();
+            $lireCommentaireParChapitre = $commentaireManager->lireTousLesCommentaires();// idChapitre en parametre
 
             var_dump($lireCommentaireParChapitre);
         }
@@ -237,7 +206,7 @@ class PageAccueil // sert à montrer la page d'accueil
             $chapitre = new Chapitre();
         }
 
-        $this->accederChapitres();
+        $this->getChapitres();
 
         $myView = new View('chapitre');
         $myView->render(array(
@@ -259,7 +228,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
 
 // 'lireLesCommentaires'              => ['controller' =>'PageAccueil',  'method' =>'lireTousLesCommentaires'],
-  public function lireTousLesCommentaires()
+  public function getCommentaires() //avant lireTousLesCommentaires
     {
         echo 'DDDDDD';
         if (isset($_GET['idChapitre']))
@@ -269,8 +238,10 @@ class PageAccueil // sert à montrer la page d'accueil
 
             if ($_POST != null) {
 
-                $manager = new publierDesChapitresManager();
-                $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
+                $chapitreManager = new chapitreManager();
+                $idChapitre = $_GET['idChapitre'];
+
+                $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
 
                 // $commentaire = new commentaire();
@@ -278,9 +249,9 @@ class PageAccueil // sert à montrer la page d'accueil
                 $idChapitre = $_GET['idChapitre'];
 
 
-                $unChapitre = $manager->getChapitre($idChapitre);
+                $unChapitre = $chapitreManager->getChapitre($idChapitre);
 
-                $lireCommentairesChapitre = new publierDesCommentairesManager();
+                $commentaireManager = new commentaireManager();
                 //$lireCommentairesChapitre = $managerComment->lireTousLesCommentaires($idChapitre);
 
 
@@ -290,32 +261,34 @@ class PageAccueil // sert à montrer la page d'accueil
                 $commentaire->setContenuCommentaire($_POST['contenuCommentaire']);
                 $commentaire->setMailCommentaire($_POST['mailCommentaire']);
                 $commentaire->setIdChapitre($_GET['idChapitre']);
-                $lireCommentairesChapitre->getCommentaire($idChapitre);//lireCommentaire($commentaire);
+
+                $lireCommentaires= $commentaireManager->getCommentaire($idChapitre);//lireCommentaire($commentaire);
 
 
-                var_dump($lireCommentairesChapitre);
 
             }
-        }   //$manager = new publierDesChapitresManager();
+        }   //$manager = new chapitreManager();
             //$chapitres = $manager->publierTousLesChapitres();// idChapitre en parametre
 
-            //$managerComment = new publierDesCommentairesManager();
+            //$managerComment = new commentaireManager();
             // $commentaires = $managerComment->lireTousLesCommentaires();
 
             //$this->accederChapitres();
 
 
-        else{
+       /* else{
             echo 'Aucun commentaire de publié';
-        }
+        }*/
 
         $myView = new View('affichageUnChapitre');
         $myView->render(array(
             'chapitres' => $chapitres,
             'unChapitre'=>$unChapitre,
             'commentaire' => $commentaire,
-            'lireCommentairesChapitre'=>$lireCommentairesChapitre));
+            'lireCommentaires'=>$lireCommentaires));
     }
+
+
 
 
     public function formulaireContact()
@@ -345,7 +318,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
         }
 
-        $manager = new publierDesChapitresManager();
+        $manager = new chapitreManager();
         $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('affichageFormulaireContact');
@@ -393,17 +366,13 @@ class PageAccueil // sert à montrer la page d'accueil
 
     public function bibliographie()
     {
-        $manager = new publierDesChapitresManager();
-        $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
+        $chapitreManager = new chapitreManager();
+        $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('affichageBibliographie');
         $myView->render(array('chapitres' => $chapitres));
     }
 
-    public function connexionAdmin()
-    {
-        $myView = new View('admin');
-        $myView->render(array('admin' => $admin));
-    }
+
 
 }

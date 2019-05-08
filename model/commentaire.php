@@ -1,7 +1,7 @@
 <?php
 
 
-class commentaire extends HydrateEntityCommentaire
+class commentaire extends AbstractEntity
 {
     private $_idCommentaire;
     private $_pseudoCommentaire;

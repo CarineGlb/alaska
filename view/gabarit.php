@@ -40,7 +40,7 @@
 
                 <ul>
                 <li class="nav-item">
-                    <a href="#">Accueil</a>
+                    <a href="<?php echo HOST;?>/blog_alaska/index.php">Accueil</a>
                 </li>
                 </ul>
 
@@ -51,14 +51,14 @@
                 </ul>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/blog_alaska/index.php?action=lireChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/blog_alaska/index.php?action=getChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chapitres <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
 
                         foreach ($chapitres as $chapitre)
                         {
-                            echo '<li> <a href="' .  HOST . '/blog_alaska/index.php?action=lireChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
+                            echo '<li> <a href="' .  HOST . '/blog_alaska/index.php?action=getChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
                         }
                         ?>
                     </ul>

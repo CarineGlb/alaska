@@ -1,100 +1,81 @@
 
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="tableau-commentaires col-lg-12">
-                <h3> Listes des commentaires</h3>
+<div class="containertabCommentaires">
+    <h3> Listes des commentaires</h3><br/>
+  <div class="rowTabCommentaires">
+     <div class="tableau-commentaires">
 
 
-    <br>
+<table class="table table-bordered">
 
-
-<table class="table">
-  <thead class="thead-light">
-
+        <thead class="thead-light">
+<tr>
         <th scope="col">Pseudo</th>
         <th scope="col">Commentaire</th>
         <th scope="col">Mail</th>
         <th scope="col">Signalement</th>
-        <th scope="col">Action</th>
+        <th class="tabAction" scope="col">Action</th>
+</tr>
+        </thead>
+       <!-- d'abord le foreach, ensuite le <tr> pour créer une ligne et le <td> pour créer une colonne. A la fin des <td>, on ferme l'accolade du foreach-->
+    <tbody>
 
-        <tr>
+     <?php foreach( $commentairesAdmin as $key=>$contenu) {?>
+
+        <tr> <!-- 1 ligne -->
+
+             <td><!-- 1 colonne -->
+                 <div class = "tabPseudoCommentaire">
+
+                    <?php echo $contenu->getPseudoCommentaire(); ?> <br/>
+
+                 </div>
+             </td>
+
             <td>
-        <?php
-        foreach( $commentairesAdmin as $key=>$contenu)
-        {
-        ?>
+                <div class = "tabContenuCommentaire">
 
-         <?php echo $contenu->getPseudoCommentaire().'<br/>'; ?>
+                     <?php echo $contenu->getContenuCommentaire().'<br/>'; ?>
 
-            <?php
-            }
-            ?>
-
+                </div>
             </td>
 
             <td>
-                <?php
-                foreach( $commentairesAdmin as $key=>$contenu)
-                {
-                    ?>
-
-                    <?php echo $contenu->getContenuCommentaire().'<br/>'; ?>
-
-                    <?php
-                }
-                ?>
-
-            </td>
-
-            <td>
-                <?php
-                foreach( $commentairesAdmin as $key=>$contenu)
-                {
-                    ?>
+                <div class = "tabMailCommentaire">
 
                     <?php echo $contenu->getMailCommentaire().'<br/>'; ?>
-
-                    <?php
-                }
-                ?>
+                </div>
 
             </td>
 
             <td>
-                <?php
-                foreach( $commentairesAdmin as $key=>$contenu)
-                {
-                    ?>
+                <div class="tabCommentairesSignales">
 
                     <?php echo $contenu->getCommentaireSignale().'<br/>'; ?>
 
-                    <?php
-                }
-                ?>
-
+                </div>
             </td>
 
             <td>
-                <?php
-                if(!empty($contenu))
-                {
- ?>
-                <a href="#"><i class="fas fa-check" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Valider</a>
-                <a href="#"><i class="fas fa-trash-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Supprimer</a>
-                <?php }?>
+                <div class="tabAction">
+
+                    <a href="<?php echo HOST.'/blog_alaska/index.php?action=signalementCommentaire&idCommentaire=' . $contenu->getIdCommentaire();?>"><i class="fas fa-check" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Supprimer le signalement</a><br/>
+                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=suppressionCommentaire&idCommentaire=<?php echo $contenu->getIdCommentaire();?>"><i class="fas fa-trash-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Supprimer</a><br/>
+                </div>
             </td>
 
-        </tr>
+    </tr>
 
+    <?php } ?>
 
+</tbody>
 
-
-
-  </thead>
+</table>
 
             </div>
         </div>
     </div>
-</section>
+
+
+
+

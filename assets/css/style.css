@@ -238,6 +238,13 @@ li{
     margin-left: 300px;
 }
 
+#boutonSignalerCommentaire
+{
+    background-color:#ffffff;
+    color: #ffffff;
+    border: 1px solid #cf3030;
+}
+
 div.form-group{
     width: 80%;
 }

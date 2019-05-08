@@ -37,7 +37,7 @@
          <?php
 
 
-            echo '<h5>' . $unChapitre->getTitreChapitre() . '</h5>' . '</br>';
+            echo '<h5>' . $unChapitre->getTitreChapitre() . '</h5>';
             echo '<p>' . $unChapitre->getContenuChapitre() . '</p>';
 
 
@@ -53,13 +53,15 @@
 
 <section class="affichageCommentaires">
 
-    <h5> Vos commentaires</h5><br/>
+    <h5> Vos commentaires</h5>
 
-    <?php
 
-    echo $messageResultat;
 
-    if($commentaires!=null)
+    <strong><?php echo $messageResultat?></strong><br/>
+
+
+   <?php
+   if($commentaires!=null)
     {
 
    foreach( $commentaires as $key=>$contenu) // boucle sur mon tableau de chapitres : pour chaque element de mon tableau $chapitres, prends la valeur $ chapitre

@@ -2,7 +2,7 @@
 
 
 
-class publierDesCommentairesManager
+class commentaireManager
 {
 
     private $_bdd;
@@ -12,8 +12,6 @@ class publierDesCommentairesManager
         $this->_bdd = new PDO('mysql:host=localhost;dbname=alaska;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         //return $bdd;
     }
-
-
 
     /**
      * @param Commentaire $commentaire
@@ -53,11 +51,8 @@ $req->execute(array(
     public function insertCommentaireSignale($commentaire) //insererCommentaireSignaleBDD($commentaire)
 
         {
-
             $bdd = $this->_bdd;
-
             $requete = $bdd->prepare('UPDATE commentairelivre SET commentaireSignale = commentaireSignale+1 WHERE idCommentaire= :idCommentaire'); // verif dans sql est ok
-
             $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
 
             //var_dump($commentaire);
@@ -69,17 +64,6 @@ $req->execute(array(
             return $signaler ;
 
         }
-
-
-
-
-
-
-
-
-
-
-
 
     /*public function creerCommentaire($commentaire)
     {
@@ -111,6 +95,29 @@ $req->execute(array(
         }
     }*/
 
+    public function getListeTousLesCommentaires()
+    {
+        $bdd = $this->_bdd;
+
+        $query = ('SELECT*FROM commentairelivre ORDER BY commentaireSignale DESC');
+
+        $pdoStat = $bdd->prepare($query);
+        //$pdoStat->bindValue(':idCommentaire', $idCommentaire, PDO::PARAM_INT);
+        $pdoStat->execute();
+
+        while ($results = $pdoStat->fetch(PDO::FETCH_ASSOC)) {
+            $tabCommentaireAdmin[] = new commentaire($results);
+        }
+
+        return $tabCommentaireAdmin;
+
+        //return new commentaire($pdoStat->fetchAll(PDO::FETCH_ASSOC));
+    }
+
+// creer une boucle de resultats car pr le moment un seul resultat stocke
+
+
+
     public function getListeCommentaires($idChapitre)//lireCommentaire($idChapitre)
 
     {
@@ -128,6 +135,16 @@ $req->execute(array(
         return $tabCommentaire;
 
     }
+/*
+    public function count()
+    {
+        $bdd = $this->_bdd;
+        $requete=$bdd->query('SELECT COUNT(*) FROM livre');
+        $requete->execute(fetchColumn());
+
+        return $requete;
+    }
+*/
             //---------------sous ligne 117------------
 
             //$tabCommentaire = array();
@@ -209,8 +226,36 @@ $req->execute(array(
      }
 
 
+    public function deleteCommentaire($idCommentaire)
+    {
+        $bdd = $this->_bdd;
 
+        $query = ('DELETE FROM commentairelivre WHERE idCommentaire =:idCommentaire');
 
+        $deleteCommentaire = $bdd->prepare($query);
+        $deleteCommentaire->bindValue(':idCommentaire', $idCommentaire, PDO::PARAM_INT);
+        $deleteCommentaire->execute();
+
+        return $deleteCommentaire;
+
+        //return new commentaire($pdoStat->fetchAll(PDO::FETCH_ASSOC));
+    }
+
+    public function deleteCommentaireSignale($idCommentaire,$commentaire)
+    {
+        $bdd = $this->_bdd;
+        $requete = $bdd->prepare('UPDATE commentairelivre SET commentaireSignale = :commentaireSignale WHERE idCommentaire= :idCommentaire'); // verif dans sql est ok
+        $requete->bindValue(':idCommentaire', $commentaire->getCommentaireSignale(), PDO::PARAM_INT);
+        $requete->bindValue(':commentaireSignale', $commentaire->getCommentaireSignale(), PDO::PARAM_INT);
+        //var_dump($commentaire);
+
+        //$requete->bindValue(':commentaireSignale', $commentaire->getCommentaireSignale(), PDO::PARAM_INT);
+
+        $suppressionSignaler = $requete->execute();
+
+        return $suppressionSignaler ;
+
+    }
 
 
        /* //foreach ($results as $row)
@@ -230,21 +275,25 @@ $req->execute(array(
         // $commentaires = array();
         // while ($row = $pdoStat->fetchAll())   //PDO::FETCH_ASSOC*/
 
-
-
-
-
-    public function supprimerCommentaires($commentaire)
+    public function modifierCommentaire($commentaire)
     {
-        /*supprime l'objet passé en argument
-        retourne true ou false*/
+        $bdd = $this->_bdd;
+        $requete = $bdd->prepare('UPDATE `commentairelivre` SET pseudoCommentaire = :pseudoCommentaire, mailCommentaire = :mailCommentaire, contenuCommentaire = :contenuCommentaire , idChapitre = :idChapitre , commentaireSignale = :commentaireSignale  WHERE idCommentaire= :idCommentaire'); // verif dans sql est ok
+        $requete->bindValue(':idCommentaire', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
+        $requete->bindValue(':pseudoCommentaire', $commentaire->getPseudoCommentaire(), PDO::PARAM_STR);
+        $requete->bindValue(':mailCommentaire', $commentaire->getMailCommentaire(), PDO::PARAM_STR);
+        $requete->bindValue(':contenuCommentaire', $commentaire->getContenuCommentaire(), PDO::PARAM_STR);
+        $requete->bindValue(':idChapitre', $commentaire->getIdChapitre(), PDO::PARAM_INT);
+        $requete->bindValue(':commentaireSignale', $commentaire->getCommentaireSignale(), PDO::PARAM_INT);
+        //var_dump($commentaire);
 
-        $this->_pdoStatement = $this->_pdo->prepare('DELETE FROM commentairelivre WHERE id=:id LIMIT 1');
+        //$requete->bindValue(':commentaireSignale', $commentaire->getCommentaireSignale(), PDO::PARAM_INT);
 
-        $this->_pdoStatement->bindValue(':id', $commentaire->getIdCommentaire(), PDO::PARAM_INT);
+        $modifierCommentaire = $requete->execute();
 
-        return $this->_pdoStatement->execute();
+        return $modifierCommentaire;
     }
+
 
 
 }
