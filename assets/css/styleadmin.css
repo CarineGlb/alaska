@@ -594,6 +594,15 @@ th
     border-top-right-radius: 5px;
 /*Main CSS*/
 
+p {
+    text-align: right;
+    clear: both;
+}
+p span {
+    float: left;
+}
+
+
 
 
 

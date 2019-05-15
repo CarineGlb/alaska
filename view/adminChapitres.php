@@ -2,6 +2,15 @@
 
 <div class="containertabChapitres">
 
+    <?php
+    if(!empty($message))
+    {
+        echo $message;
+    }
+
+    ?>
+
+
     <h3> Listes des chapitres</h3><br/>
   <div class="rowTabChapitres">
      <div class="tableau-chapitres">

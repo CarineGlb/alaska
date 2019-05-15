@@ -37,7 +37,7 @@
                     <li><a href=<?php echo HOST;?>/blog_alaska/index.php?action=listCommentaires><i class="fas fa-comments" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Commentaires</span></a></li>
                     <li><a href=<?php echo HOST;?>/blog_alaska/index.php?action=listChapitres><i class="fas fa-edit" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Chapitres du livre</span></a></li>
                     <li><a href= <?php echo HOST;?>/blog_alaska/index.php?action=ajouterChapitre><i class="fas fa-user-edit" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Rédiger un nouveau chapitre</span></a></li>
-
+                    <li><a href= <?php echo HOST;?>/blog_alaska/index.php><i class="fas fa-arrow-left" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Revenir sur le site</span></a></li>
 
 
                 </ul>
@@ -52,45 +52,14 @@
                     <div class="col-md-7">
                         <nav class="navbar-default pull-left">
                             <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu" aria-expanded="false">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
+
+                                <span><p><i class="fas fa-user-cog"></i> Administrateur</p></span>
+
                             </div>
                         </nav>
-                        <div class="search hidden-xs hidden-sm">
-                            <input type="text" placeholder="Rechercher" id="search">
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="header-rightside">
-                            <ul class="list-inline header-top pull-right">
 
-
-                                    </a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="Administrateur">
-                                        <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <div class="navbar-content">
-                                                <span>Jean Forteroche</span>
-                                                <p class="text-muted small">
-                                                   jf@alaska.com
-                                                </p>
-                                                <div class="divider">
-                                                </div>
-                                                <a href="#" class="view btn-sm active">View Profile</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
+
                 </header>
             </div>
             <div class="user-dashboard">
@@ -104,18 +73,9 @@
                             <h2><?php echo $nombreTotalCommentaires;?> Nouveaux Commentaires</h2>
                             <br/>
                             <br/>
-                            <a href=<?php echo HOST;?>/blog_alaska/index.php?action=tableauCommentaireAdmin>Voir le détail</a>
+                            <a href=<?php echo HOST;?>/blog_alaska/index.php?action=listCommentaires>Voir le détail</a>
 
-                            <!--<div class="btn-group">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span>Periode:</span> En cours
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a href="#">Mars</a>
-                                    <a href="#">Février</a>
-                                    <a href="#">Janvier</a>
-                                </div>
-                            </div> -->
+
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12 gutter">
@@ -126,16 +86,6 @@
                             <a href=<?php echo HOST;?>/blog_alaska/index.php?action=tableauChapitreAdmin>Voir le détail</a>
 
 
-                            <!-- <div class="btn-group">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span>Periode:</span> En cours
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a href="#">Mars</a>
-                                    <a href="#">Février</a>
-                                    <a href="#">Janvier</a>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
 
@@ -150,31 +100,6 @@
 </div>
 
 
-
-<!-- Modal
-<div id="add_project" class="modal fade" role="dialog">
-    <div class="modal-dialog"-->
-
-        <!-- Modal content
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Add Project</h4>
-            </div>
-            <div class="modal-body">
-                <input type="text" placeholder="Project Title" name="name">
-                <input type="text" placeholder="Post of Post" name="mail">
-                <input type="text" placeholder="Author" name="passsword">
-                <textarea placeholder="Desicrption"></textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="cancel" data-dismiss="modal">Close</button>
-                <button type="button" class="add-project" data-dismiss="modal">Save</button>
-            </div>
-        </div>
-
-    </div>
-</div> -->
 
 
 

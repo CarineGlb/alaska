@@ -1,9 +1,19 @@
 
 
 <div class="containertabCommentaires">
+
+    <?php
+    if(!empty($message))
+    {
+        echo $message;
+    }
+
+    ?>
+
     <h3> Listes des commentaires</h3><br/>
   <div class="rowTabCommentaires">
      <div class="tableau-commentaires">
+
 
 
 <table class="table table-bordered">

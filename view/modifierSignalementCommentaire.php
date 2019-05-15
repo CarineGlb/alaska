@@ -24,13 +24,3 @@
 
 </div>
 
-<?php
-if(!empty($message))
-{
-    echo  $messageSuppression;
-}
-
-else{
-    echo 'Le signalement du commentaire a été conservé';
-}
-?>

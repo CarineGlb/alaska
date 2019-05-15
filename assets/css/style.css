@@ -240,9 +240,9 @@ li{
 
 #boutonSignalerCommentaire
 {
-    background-color:#ffffff;
+
     color: #ffffff;
-    border: 1px solid #cf3030;
+
 }
 
 div.form-group{
@@ -268,6 +268,11 @@ ul.foote_bottom_ul_amrc li {
 .foote_bottom_ul_amrc li a {
     color: #566573;
     margin:0 12px;
+}
+
+h5
+{
+    color:#59bd9c;
 }
 
 .social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }

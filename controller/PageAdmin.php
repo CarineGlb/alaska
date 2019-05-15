@@ -41,39 +41,7 @@ class PageAdmin // sert à montrer la page d'admin
             )); // c'est une variable qui appelle une autre variable
     }
 
-// adminValidationCommentaires
-/* public function adminTableauChapitres()
-    {
-        $managerCommentaire = new CommentaireManager();
-        $managerChapitre = new ChapitreManager();
 
-        $commentairesAdmin = $managerCommentaire->getListeTousLesCommentaires();
-
-        $nombreTotalCommentaires = count($commentairesAdmin);
-
-        $chapitres = $managerChapitre->getListeChapitres('');
-        $totalChapitres = $managerChapitre->getTotalChapitres(); //publierTousLesChapitres();
-
-        $nombreTotalChapitres = count($chapitres);
-
-
-        //$idChapitre = $_GET['idChapitre'];
-        $chapitresAdmin = $managerChapitre->getListeChapitres('');
-
-        //$idChapitre = $_GET['idChapitre'];
-       // $chapitre = $managerChapitre->getChapitre($idChapitre);
-        //$idCommentaire = $_GET['idCommentaire'];
-        //$creerChapitreAdmin = $managerChapitre->creerChapitre($chapitre);
-
-
-        $myView = new View('adminChapitres');
-        $myView->renderAdmin(array(
-           // 'creerChapitreAdmin' => $creerChapitreAdmin,
-            'nombreTotalCommentaires'=> $nombreTotalCommentaires,
-            'nombreTotalChapitres' => $nombreTotalChapitres,
-            'chapitresAdmin'=>$chapitresAdmin
-        )); // c'est une variable qui appelle une autre variable
-    }*/
 
     public function listCommentaires($message='')// avant adminTableauCommentaires
     {
@@ -85,7 +53,7 @@ class PageAdmin // sert à montrer la page d'admin
         $nombreTotalCommentaires = count($commentaires);
 
         $chapitres = $chapitreManager->getListeChapitres();
-        $totalChapitres = $chapitreManager->getTotalChapitres(); //publierTousLesChapitres();
+       // $totalChapitres = $chapitreManager->getTotalChapitres(); //publierTousLesChapitres();
 
         $nombreTotalChapitres = count($chapitres);
 
@@ -128,7 +96,7 @@ class PageAdmin // sert à montrer la page d'admin
 
         if ($deleteCommentaireAdmin)
         {
-            echo $messageSuppressionCommentaire = 'Ce commentaire a été supprimé.';
+            $messageSuppressionCommentaire = 'Ce commentaire a été supprimé.';
 
             $this->listCommentaires($messageSuppressionCommentaire);
         }
@@ -168,30 +136,39 @@ class PageAdmin // sert à montrer la page d'admin
        $commentaire = $commentaireManager->getCommentaire($idCommentaire);
 
 
-
        if (isset($_POST['choix'])) {
+
+           $messageSuppression ='Le signalement du commentaire a été conservé.';
            if ($_POST['choix'] == "supprimer")
            {
                $commentaire->setCommentaireSignale(0);
                $modifierSignalementCommentaireAdmin = $commentaireManager->modifierCommentaire($commentaire);
-               //$messageSuppression = 'Le signalement du commentaire a été supprimé.';
 
-
-           $this->listCommentaires('Le signalement du commentaire a été supprimé.');
+               if($modifierSignalementCommentaireAdmin)
+               {
+                   $messageSuppression = 'Le signalement du commentaire a été supprimé.';
+               }
+               else{
+                   $messageSuppression = 'Un problème est survenu lors de la suppression du signalement.';
+               }
 
            }
+           $this->listCommentaires($messageSuppression);
        }
 
-       $myView = new View('modifierSignalementCommentaire');
-       $myView->renderAdmin(array(
-                   'nombreTotalCommentaires' => $nombreTotalCommentaires,
-                   'nombreTotalChapitres' => $nombreTotalChapitres,
-                   'modifierSignalementCommentaireAdmin'=>$modifierSignalementCommentaireAdmin,
-                   'chapitres' => $chapitres,
-                   'commentaire' => $commentaire
-                   //'messageSuppression' =>$messageSuppression
-               ));
+       else
+       {
+           $myView = new View('modifierSignalementCommentaire');
+           $myView->renderAdmin(array(
+               'nombreTotalCommentaires' => $nombreTotalCommentaires,
+               'nombreTotalChapitres' => $nombreTotalChapitres,
+               'chapitres' => $chapitres,
+               'commentaire' => $commentaire
+           ));
        }
+
+
+   }
 
 
 
@@ -208,19 +185,11 @@ class PageAdmin // sert à montrer la page d'admin
         $nombreTotalCommentaires = count($commentairesAdmin);
 
         $chapitres = $chapitreManager->getListeChapitres();
-        $totalChapitres = $chapitreManager->getTotalChapitres(); //publierTousLesChapitres();
+        //$totalChapitres = $chapitreManager->getTotalChapitres(); //publierTousLesChapitres();
 
         $nombreTotalChapitres = count($chapitres);
 
-
-        //$idChapitre = $_GET['idChapitre'];
         $chapitresAdmin = $chapitreManager->getListeChapitres();
-
-        //$idChapitre = $_GET['idChapitre'];
-       // $chapitre = $managerChapitre->getChapitre($idChapitre);
-        //$idCommentaire = $_GET['idCommentaire'];
-        //$creerChapitreAdmin = $managerChapitre->creerChapitre($chapitre);
-
 
         $myView = new View('adminChapitres');
         $myView->renderAdmin(array(
@@ -249,21 +218,17 @@ class PageAdmin // sert à montrer la page d'admin
         //$totalChapitres = $managerChapitre->getTotalChapitres(); //publierTousLesChapitres();
         $nombreTotalChapitres = count($chapitres);
 
-       // $idChapitre = $_GET['idChapitre'];
-        // $chapitre = $managerChapitre->getChapitre($idChapitre);
-        //$idCommentaire = $_GET['idCommentaire'];
-
         $messageResultat = '';
 
         if (!empty($_POST['send'])) {
             $chapitre = new Chapitre();
-            $chapitre->setTitreChapitre($_POST['titreChapitre']);
-            $chapitre->setContenuChapitre($_POST['contenuChapitre']);
+            $chapitre->setTitreChapitre(htmlspecialchars($_POST['titreChapitre']));
+            $chapitre->setContenuChapitre(htmlspecialchars($_POST['contenuChapitre']));
 
             $creerChapitreAdmin = $chapitreManager->creerChapitre($chapitre);
 
             if ($creerChapitreAdmin) {
-                echo $messageResultat = 'Votre nouveau chapitre a été crée.';
+                $messageResultat = 'Votre nouveau chapitre a été crée.';
             }
 
             $this->listChapitres($messageResultat);
@@ -275,7 +240,6 @@ class PageAdmin // sert à montrer la page d'admin
 
                 'nombreTotalCommentaires' => $nombreTotalCommentaires,
                 'nombreTotalChapitres' => $nombreTotalChapitres,
-                //'chapitre' => $chapitre,
                 'messageResultat' => $messageResultat
             )); // c'est une variable qui appelle une autre variable
         }
@@ -283,12 +247,6 @@ class PageAdmin // sert à montrer la page d'admin
 
      }
 
-    /* Pour le count : autre possibilité
-
-    $nombreTotalChapitres=$manager->count();
-    $nombreTotalCommentaires=$manager->count();
-
-    */
 
     public function updateChapitre()
     {
@@ -320,7 +278,7 @@ class PageAdmin // sert à montrer la page d'admin
 
             if ($modifierChapitreAdmin)
             {
-                echo $message = 'Vos modifications ont été prises en compte.';
+                $message = 'Vos modifications ont été prises en compte.';
             }
 
             $this->listChapitres($message);
@@ -342,30 +300,6 @@ class PageAdmin // sert à montrer la page d'admin
 
 }
 
-    /*  if (!empty($_POST['send'])) {
-            $chapitre = new Chapitre();
-            $chapitre->setTitreChapitre($_POST['titreChapitre']);
-            $chapitre->setContenuChapitre($_POST['contenuChapitre']);
-
-            $creerChapitreAdmin = $managerChapitre->creerChapitre($chapitre);
-
-            if ($creerChapitreAdmin) {
-                echo $messageResultat = 'Votre nouveau chapitre a été crée.';
-            }
-
-            $this->tableauBordAdmin($messageResultat);
-
-        }
-        else{
-            $myView = new View('creerChapitre');
-            $myView->renderAdmin(array(
-
-                'nombreTotalCommentaires' => $nombreTotalCommentaires,
-                'nombreTotalChapitres' => $nombreTotalChapitres,
-                //'chapitre' => $chapitre,
-                'messageResultat' => $messageResultat
-            )); // c'est une variable qui appelle une autre variable
-        }*/
 
     public function deleteChapitre()
     {
@@ -387,10 +321,12 @@ class PageAdmin // sert à montrer la page d'admin
         $deleteChapitreAdmin = $chapitreManager->deleteChapitre($idChapitre);
 
         if ($deleteChapitreAdmin) {
-            echo $messageSuppressionChapitre = 'Ce chapitre a été supprimé.';
+            $messageSuppressionChapitre = 'Ce chapitre a été supprimé.';
 
             $this->listChapitres($messageSuppressionChapitre);
-        } else {
+        }
+
+        else {
             $myView = new View('adminChapitres');
             $myView->renderAdmin(array(
                 'deleteChapitreAdmin' => $deleteChapitreAdmin,
@@ -402,43 +338,7 @@ class PageAdmin // sert à montrer la page d'admin
         }
     }
 
-    public function deleteChapitreEtCommentaires()
-    {
-        if (isset($_GET['idChapitre']))
-        {
-            $commentaireManager= new CommentaireManager();
-            $chapitreManager = new ChapitreManager();
 
-            $commentairesAdmin = $commentaireManager->getListeTousLesCommentaires();
-
-            $nombreTotalCommentaires = count($commentairesAdmin);
-            $idChapitre = $_GET['idChapitre'];
-
-            $chapitres = $chapitreManager->getListeChapitres();
-            $totalChapitres = $chapitreManager->getTotalChapitres(); //publierTousLesChapitres();
-
-            $nombreTotalChapitres = count($chapitres);
-
-            $deleteChapitreEtCommentaires = $chapitreManager->deleteChapitreEtCommentaires();
-
-            if( $deleteChapitreEtCommentaires)
-            {
-                $message = 'Le chapitre et ses commentaires ont été supprimés.';
-            }
-
-            $this->listChapitres($message);
-
-            $myView = new View('adminChapitres');
-            $myView->render(array(
-
-                'nombreTotalCommentaires' => $nombreTotalCommentaires,
-                'totalChapitres' => $totalChapitres,
-                'nombreTotalChapitres' => $nombreTotalChapitres,
-                'message'=>$message,
-                'deleteChapitreEtCommentaires'=>$deleteChapitreEtCommentaires));
-
-        }
-    }
      public function connexionAdmin()
     {
         if(isset($_POST['motDePasse']) AND $_POST['motDePasse'] ==  "alaska")

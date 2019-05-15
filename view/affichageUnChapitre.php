@@ -66,7 +66,7 @@
 
    foreach( $commentaires as $key=>$contenu) // boucle sur mon tableau de chapitres : pour chaque element de mon tableau $chapitres, prends la valeur $ chapitre
      {
-         echo '<strong>' . htmlspecialchars($contenu->getPseudoCommentaire()).'</strong> : '. htmlspecialchars($contenu->getContenuCommentaire()) .' <br/><button type="button" class="btn btn-warning" id="boutonSignalerCommentaire"><a href='. HOST.'/blog_alaska/index.php?action=insertionCommentaireSignale&idCommentaire='.$contenu->getIdCommentaire() . '&idChapitre=' . $unChapitre->getIdChapitre() . '>Signaler le commentaire </a></button>
+         echo '<strong>' . htmlspecialchars($contenu->getPseudoCommentaire()).'</strong> : '. htmlspecialchars($contenu->getContenuCommentaire()) .' <br/><a href='. HOST.'/blog_alaska/index.php?action=insertionCommentaireSignale&idCommentaire='.$contenu->getIdCommentaire() . '&idChapitre=' . $unChapitre->getIdChapitre() . '>Signaler le commentaire </a></button>
 <br/>';
      echo '<br/>';}
     }

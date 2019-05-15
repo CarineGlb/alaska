@@ -64,7 +64,7 @@
 
     //Debug::printr($tabCommentaire);
 
-    echo $_POST['pseudoCommentaire'];
+    echo htmlspecialchars($_POST['pseudoCommentaire']);
 
     /*foreach($lireCommentairesChapitre as $key=> $voirCommentaire)
     {
