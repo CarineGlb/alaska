@@ -3,13 +3,13 @@
 // classe qui gère la connexion à la BDD = manager
 
 
-class chapitreManager
+class ChapitreManager
 {
     private $_bdd;
 
     public function __construct() // on instancie $bdd au démarrage
     {
-        $this->_bdd = new PDO('mysql:host=localhost;dbname=alaska;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $this->_bdd = new PDO('mysql:host=carineglbvoc.mysql.db;dbname=carineglbvoc;charset=utf8', 'carineglbvoc', '5qhYmhRnuCV9',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
 
 

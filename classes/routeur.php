@@ -8,7 +8,7 @@ créer un construc
 passer la route
 quand on a la route on fait un include*/
 
-class Routeur
+class routeur
 {
     private $request;
 

@@ -13,10 +13,7 @@ class PageAccueil // sert à montrer la page d'accueil
         $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('viewPageAccueil'); // mm noms que les fichiers de ma vue
-        $myView->render(array(
-            'chapitres' => $chapitres,
-
-            )); // c'est une variable qui appelle une autre variable
+        $myView->render(array('chapitres' => $chapitres)); // c'est une variable qui appelle une autre variable
     }
 
     public function aPropos()
