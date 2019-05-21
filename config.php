@@ -1,5 +1,3 @@
-
-
 <?php
 
 ini_set('display_errors','on');
@@ -9,74 +7,55 @@ error_reporting(E_ALL);
 
 class MyAutoload
 {
-    private static $_host;
-    private static $_root;
-    private static $_controller;
-    private static $_view;
-    private static $_model;
-    private static $_classes;
-    private static $_assets;
-
-    public static function start() {
+    public static function start () // statique car appelée 1 seule fois dans l'appli
+    {
         spl_autoload_register(array(__CLASS__, 'autoload'));
+
+        $root = $_SERVER['DOCUMENT_ROOT'];
+        $host = $_SERVER['HTTP_HOST'];
+
+        echo $root;
+        echo '------------';
+        echo $host;
+
+        //echo $root; // /home/carineglbv/www/alaska
+      //  echo '-------------';
+        //echo $host; // www.blog-alaska.carinegl.com
+
+
+
+        define('HOST', 'http://' . $host);
+        define('ROOT', $root); //define('ROOT', $root.'/blog_alaska/'); define('ROOT', $root.'/');
+
+        /*define('HOST', 'http://' . $host . '/blog_alaska/');
+        define('ROOT', $root . '/blog_alaska/');*/
+
+        define('CONTROLLER', ROOT . '/controller/'); //define('CONTROLLER', ROOT . 'controller/');
+        define('VIEW', ROOT . '/view/'); //define('VIEW', ROOT . 'view/');
+        define('MODEL', ROOT . '/model/'); //define('MODEL', ROOT . 'model/');
+        define('CLASSES', ROOT.'/classes/'); //define('CLASSES', ROOT . 'classes/');
+
+        define('ASSETS', HOST . '/assets/'); //define('ASSETS', HOST . 'assets/');
+
+
     }
 
-    public static function autoload($class) {
-        if (file_exists(self::model() . $class . '.php')) {
-            include_once(self::model() . $class . '.php');
-        } elseif (file_exists(self::classes() . $class . '.php')) {
-            include_once(self::classes() . $class . '.php');
-        } elseif (file_exists(self::controller() . $class . '.php')) {
-            include_once(self::controller() . $class . '.php');
+
+
+    public static function autoload ($class) // on passe les classes en variables. Si la classe existe on la charge
+    {
+
+        if (file_exists('MODEL' . $class . '.php')) {
+            include_once('MODEL' . $class . '.php');
+
+        } elseif (file_exists('CLASSES' . $class . '.php')) {
+            include_once('CLASSES' . $class . '.php');
+        } elseif (file_exists('CONTROLLER' . $class . '.php')) {
+            include_once('CONTROLLER' . $class . '.php');
         }
+
     }
+}
 
-    public static function host() {
-        if(empty(self::$_host))
-            self::$_host = 'http://' . $_SERVER['HTTP_HOST'];
 
-        return self::$_host;
-    }
 
-    public static function root() {
-        if(empty(self::$_root))
-            self::$_root = $_SERVER['DOCUMENT_ROOT'];
-
-        return self::$_root;
-    }
-
-    public static function controller() {
-        if(empty(self::$_controller))
-            self::$_controller = self::root() . '/controller/';
-
-        return self::$_controller;
-    }
-
-    public static function view() {
-        if(empty(self::$_view))
-            self::$_view = self::root() . '/view/';
-
-        return self::$_view;
-    }
-
-    public static function model() {
-        if(empty(self::$_model))
-            self::$_model = self::root() . '/model/';
-
-        return self::$_model;
-    }
-
-    public static function classes() {
-        if(empty(self::$_classes))
-            self::$_classes = self::root() . '/classes/';
-
-        return self::$_classes;
-    }
-
-    public static function assets() {
-        if(empty(self::$_assets))
-            self::$_assets = self::root() . '/assets/';
-
-        return self::$_assets;
-    }
-};

@@ -40,25 +40,25 @@
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/blog_alaska/index.php">Accueil</a>
+                    <a href="<?php echo HOST;?>/www/alaska/index.php?action=accueil">Accueil</a>
                 </li>
                 </ul>
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=apropos">A propos</a>
+                    <a href="<?php echo HOST;?>/www/alaska/index.php?action=apropos">A propos</a>
                 </li>
                 </ul>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/blog_alaska/index.php?action=getChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>www/alaska/index.php?action=getChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chapitres <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
 
                         foreach ($chapitres as $chapitre)
                         {
-                            echo '<li> <a href="' .  HOST . '/blog_alaska/index.php?action=getChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
+                            echo '<li> <a href="' .  HOST . '/www/alaska/index.php?action=getChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
                         }
                         ?>
                     </ul>

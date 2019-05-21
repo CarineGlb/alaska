@@ -8,7 +8,7 @@ class PageAccueil // sert à montrer la page d'accueil
 {
     public function accueil()
     {
-        $chapitreManager = new chapitreManager();
+        $chapitreManager = new ChapitreManager();
         //$idChapitre = $_GET['idChapitre'];
         $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
@@ -18,7 +18,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
     public function aPropos()
     {
-        $chapitreManager = new chapitreManager();
+        $chapitreManager = new ChapitreManager();
         $idChapitre = $_GET['idChapitre'];
         $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
@@ -37,7 +37,7 @@ class PageAccueil // sert à montrer la page d'accueil
         {
             $idChapitre = htmlspecialchars($_GET['idChapitre']); // renommer $idChapitre
 
-            $chapitreManager = new chapitreManager();
+            $chapitreManager = new ChapitreManager();
             $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
             $unChapitre = $chapitreManager->getChapitre($idChapitre);
@@ -73,7 +73,7 @@ class PageAccueil // sert à montrer la page d'accueil
             if ($_POST != null)
             {
 
-                $chapitreManager = new chapitreManager();
+                $chapitreManager = new ChapitreManager();
                 $idChapitre = htmlspecialchars($_GET['idChapitre']);
                 $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
@@ -81,7 +81,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
                 $idCommentaire = htmlspecialchars($_GET['idCommentaire']);
 
-                $commentaireManager = new commentaireManager();
+                $commentaireManager = new CommentaireManager();
 
                 $commentaire = new commentaire($idChapitre); // mon objet $sommentaire est mon entité commentaire
                 $commentaire->setIdCommentaire (htmlspecialchars($idCommentaire));
@@ -122,7 +122,7 @@ class PageAccueil // sert à montrer la page d'accueil
             $idCommentaire = $_GET['idCommentaire'];
 
             // instancie les managers
-            $commentaireManager = new commentaireManager();
+            $commentaireManager = new CommentaireManager();
 
             // signalement du commentaire
             $commentaire = $commentaireManager->getCommentaire($idCommentaire);
@@ -147,13 +147,13 @@ class PageAccueil // sert à montrer la page d'accueil
         {
             $idChapitre = htmlspecialchars($_GET['idChapitre']); // renommer $idChapitre
 
-            $chapitreManager = new chapitreManager();
+            $chapitreManager = new ChapitreManager();
             $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
-            $commentaire = new commentaire($idChapitre);
+            $commentaire = new Commentaire($idChapitre);
             $unChapitre = $chapitreManager->getChapitre($idChapitre);
 
-            $commentaireManager = new commentaireManager();
+            $commentaireManager = new CommentaireManager();
             $lireCommentaireParChapitre = $commentaireManager->lireTousLesCommentaires();// idChapitre en parametre
 
         }
@@ -183,7 +183,7 @@ class PageAccueil // sert à montrer la page d'accueil
         {
             if ($_POST != null) {
 
-                $chapitreManager = new chapitreManager();
+                $chapitreManager = new ChapitreManager();
 
                 $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
@@ -191,7 +191,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
                 $unChapitre = $chapitreManager->getChapitre($idChapitre);
 
-                $commentaireManager = new commentaireManager();
+                $commentaireManager = new CommentaireManager();
 
                 $commentaire = new commentaire($idChapitre); // mon objet $sommentaire est mon entité commentaire
                 $commentaire->setIdCommentaire(htmlspecialchars($_GET['idCommentaire']));
@@ -243,7 +243,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
         }
 
-        $manager = new chapitreManager();
+        $manager = new ChapitreManager();
         $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('affichageFormulaireContact');
@@ -290,7 +290,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
     public function bibliographie()
     {
-        $chapitreManager = new chapitreManager();
+        $chapitreManager = new ChapitreManager();
         $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('affichageBibliographie');
