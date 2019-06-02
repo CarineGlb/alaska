@@ -275,7 +275,21 @@ h5
     color:#59bd9c;
 }
 
-.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
-.social_footer_ul li { padding-left:10px; padding-top:10px; float:left; }
-.social_footer_ul li a { color:#CCC; border:1px solid #CCC; border-radius:50%;}
+.social_footer_ul {
+    display:table;
+    margin:15px auto 0 auto;
+    list-style-type:none;
+}
+
+.social_footer_ul li {
+    padding-left:10px;
+    padding-top:10px;
+    float:left;
+}
+
+.social_footer_ul li a {
+    color:#CCC;
+    border:1px solid #CCC;
+    border-radius:50%;
+}
 

@@ -12,11 +12,10 @@ class MyAutoload
         spl_autoload_register(array(__CLASS__, 'autoload'));
 
         $root = $_SERVER['DOCUMENT_ROOT'];
+        //$root='/www/alaska';
         $host = $_SERVER['HTTP_HOST'];
 
-        echo $root;
-        echo '------------';
-        echo $host;
+
 
         //echo $root; // /home/carineglbv/www/alaska
       //  echo '-------------';
@@ -45,16 +44,18 @@ class MyAutoload
     public static function autoload ($class) // on passe les classes en variables. Si la classe existe on la charge
     {
 
-        if (file_exists('MODEL' . $class . '.php')) {
-            include_once('MODEL' . $class . '.php');
 
-        } elseif (file_exists('CLASSES' . $class . '.php')) {
-            include_once('CLASSES' . $class . '.php');
-        } elseif (file_exists('CONTROLLER' . $class . '.php')) {
-            include_once('CONTROLLER' . $class . '.php');
+        if (file_exists(MODEL . $class . '.php')) {
+            include_once(MODEL . $class . '.php');
+
+        } elseif (file_exists(CLASSES . $class . '.php')) {
+            include_once(CLASSES . $class . '.php');
+        } elseif (file_exists(CONTROLLER . $class . '.php')) {
+            include_once(CONTROLLER . $class . '.php');
         }
 
     }
+
 }
 
 

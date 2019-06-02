@@ -1,0 +1,9 @@
+<FilesMatch tableauBordAdmin.php>
+
+AuthUserFile /home/carineglbv/www/alaska/.htpasswd
+
+AuthName "Connectez-vous avec votre identifiant et votre mot de passe pour vous identifier"
+AuthType basic
+require valid-user
+
+</FilesMatch>

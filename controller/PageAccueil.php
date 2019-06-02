@@ -41,8 +41,8 @@ class PageAccueil // sert à montrer la page d'accueil
             $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
             $unChapitre = $chapitreManager->getChapitre($idChapitre);
-
-            $commentaireManager = new commentaireManager();
+//Debug::printr($unChapitre);
+            $commentaireManager = new CommentaireManager();
 
             $commentaires= $commentaireManager->getListeCommentaires($idChapitre);
 
@@ -218,37 +218,65 @@ class PageAccueil // sert à montrer la page d'accueil
 
     public function formulaireContact()
     {
-        if (isset($_POST['nom']) && (!empty($_POST['nom']))) {
-            echo $nom = htmlspecialchars($_POST['nom']);
-        } elseif (isset($_POST['prenom']) && (!empty($_POST['prenom']))) {
-            echo $prenom = htmlspecialchars($_POST['prenom']);
-        } elseif (isset($_POST['mail']) && (!empty($_POST['mail']))) {
-            echo $mail = htmlspecialchars($_POST['mail']);
-        } elseif (isset($_POST['message']) && (!empty($_POST['message']))) {
-            echo $message = htmlspecialchars($_POST['message']);
-        } else {
-            echo 'Votre mail a bien été envoyé.';
+        $nom='';
+        $prenom ='';
+        $mail = '';
+        $message ='';
+
+        if (!empty($_POST['nom'])) {
+            $nom = htmlspecialchars($_POST['nom']);
         }
 
-        if (empty($_POST['nom'])) {
-            $erreurs['nom'] = 'champ obligatoire';
-        } elseif (empty($_POST['prenom'])) {
-            $erreurs['prenom'] = 'champ obligatoire';
-        } elseif (empty($_POST['mail'])) {
-            $erreurs['mail'] = 'champ obligatoire';
-        } elseif (empty($_POST['message'])) {
-            $erreurs['message'] = 'champ obligatoire';
-        } else {
-            $messageValidation = 'Votre mail a bien été envoyé.';
-
+        if (!empty($_POST['prenom'])) {
+            $prenom = htmlspecialchars($_POST['prenom']);
         }
 
-        $manager = new ChapitreManager();
-        $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();
+        if (isset($_POST['mail']) && (!empty($_POST['mail']))) {
+            $mail = htmlspecialchars($_POST['mail']);
+        }
 
-        $myView = new View('affichageFormulaireContact');
-        $myView->render(array('chapitres' => $chapitres, 'erreurs' => $erreurs, 'validation' => $message));
-    }
+         if (isset($_POST['message']) && (!empty($_POST['message']))) {
+             $message = htmlspecialchars($_POST['message']);
+         }
+                 if (empty($_POST['nom'])) {
+                     $erreurs['nom'] = 'champ obligatoire';
+                 }
+
+                if (empty($_POST['prenom'])) {
+                     $erreurs['prenom'] = 'champ obligatoire';
+                 }
+
+                if (empty($_POST['mail'])) {
+                     $erreurs['mail'] = 'champ obligatoire';
+                 }
+
+                if (empty($_POST['message'])) {
+                     $erreurs['message'] = 'champ obligatoire';
+                 }
+
+// Le message
+        $message = "Line 1\r\nLine 2\r\nLine 3";
+
+// Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
+        $message = wordwrap($message, 70, "\r\n");
+
+// Envoi du mail
+        mail('glcarine26@gmail.com', 'Mon Sujet', $message);
+
+             $manager = new ChapitreManager();
+             $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();*/
+
+            $myView = new View('affichageFormulaireContact');
+            $myView->render(array(
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'mail' => $mail,
+                'message' => $message,
+                'erreurs' => $erreurs,
+                'chapitres' =>$chapitres));
+        }
+
+
 
 
     public function messageFormulaireContactValide()

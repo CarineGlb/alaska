@@ -13,6 +13,8 @@ class ChapitreManager
     }
 
 
+
+
     public function getListeChapitres()//publierTousLesChapitres() // fait la requete
     {
         $bdd = $this->_bdd;
@@ -20,7 +22,7 @@ class ChapitreManager
         $requete->execute();
         while($donnees = $requete->fetch()) // si je ne crée pas de boucles avec while mon tableau contiendra uniquement 1 ligne et ne pourra pas affichert ous mes chapitres
         {
-            $chapitres = new  chapitre();
+            $chapitres = new Chapitre();
             $chapitres->setIdChapitre($donnees['idChapitre']);
             $chapitres->setTitreChapitre($donnees['titreChapitre']);
             $chapitres->setContenuChapitre($donnees['contenuChapitre']);
@@ -40,7 +42,7 @@ class ChapitreManager
         $requete->execute();
         $row = $requete->fetch(PDO::FETCH_ASSOC);
 
-        $chapitre = new chapitre($row);
+        $chapitre = new Chapitre($row);
 
         return $chapitre;
 

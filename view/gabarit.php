@@ -40,25 +40,25 @@
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/www/alaska/index.php?action=accueil">Accueil</a>
+                    <a href="<?php echo HOST;?>/index.php">Accueil</a>
                 </li>
                 </ul>
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/www/alaska/index.php?action=apropos">A propos</a>
+                    <a href="<?php echo HOST;?>/index.php?action=apropos">A propos</a>
                 </li>
                 </ul>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>www/alaska/index.php?action=getChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="<?php echo HOST;?>/index.php?action=getChapitres" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Chapitres <span class="caret"></span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
 
                         foreach ($chapitres as $chapitre)
                         {
-                            echo '<li> <a href="' .  HOST . '/www/alaska/index.php?action=getChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
+                            echo '<li> <a href="' .  HOST . '/index.php?action=getChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
                         }
                         ?>
                     </ul>
@@ -66,13 +66,13 @@
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=formulaireContact">Contact</a>
+                    <a href="<?php echo HOST;?>/index.php?action=formulaireContact">Contact</a>
                 </li>
                 </ul>
 
                 <ul>
                 <li class="nav-item">
-                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=bibliographie">Bibliographie</a>
+                    <a href="<?php echo HOST;?>/index.php?action=bibliographie">Bibliographie</a>
                 </li>
                 </ul>
 
@@ -101,14 +101,14 @@
             </ul>
             <!--foote_bottom_ul_amrc ends here-->
             <p class="text-center">Copyright @2018 | Réalisé par <a href="#">Carine GL Productions</a></p>
-            <p class="text-center"><a href=<?php echo HOST;?>/blog_alaska/index.php?action=tableauBordAdmin>Connexion</a></p>
+            <p class="text-center"><a href=<?php echo HOST;?>/index.php?action=tableauBordAdmin>Connexion</a></p>
             </p>
 
 
             <ul class="social_footer_ul">
-                <li><a href="#"><img src="assets/img/twitter.png" alt="twitter"/></a></li>
-                <li><a href="#"><img src="assets/img/In-2C-14px.png" alt="linkedIn"/></a></li>
-                <li><a href="#"><img src="assets/img/instagram.png" alt="instagram"></a></li>
+                <li><a href="#"><img src="assets/img/twitter.png" alt="twitter" style="width:20px;"></a></li>
+                <li><a href="#"><img src="assets/img/linkedn.png" alt="linkedIn" style="width:20px;"/></a></li>
+                <li><a href="#"><img src="assets/img/instagram.png" alt="instagram" style="width:20px;"></a></li>
             </ul>
 
             <!--social_footer_ul ends here-->

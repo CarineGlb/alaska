@@ -9,7 +9,7 @@ C'est mon frontcontroller qui appellera mon controller depuis mon index
 
 
 //include_once ('controller/PageAccueil.php');
-include_once('config_test.php');
+include_once('config.php');
 include_once('Debug.php');
 
 MyAutoload::start();

@@ -69,8 +69,8 @@
             <td>
                 <div class="tabAction">
 
-                    <a href="<?php echo HOST.'/blog_alaska/index.php?action=signalementCommentaire&idCommentaire=' . $contenu->getIdCommentaire();?>"><i class="fas fa-check" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Supprimer le signalement</a><br/>
-                    <a href="<?php echo HOST;?>/blog_alaska/index.php?action=suppressionCommentaire&idCommentaire=<?php echo $contenu->getIdCommentaire();?>"><i class="fas fa-trash-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Supprimer</a><br/>
+                    <a href="<?php echo HOST.'/index.php?action=signalementCommentaire&idCommentaire=' . $contenu->getIdCommentaire();?>"><i class="fas fa-check" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Supprimer le signalement</a><br/>
+                    <a href="<?php echo HOST;?>/index.php?action=suppressionCommentaire&idCommentaire=<?php echo $contenu->getIdCommentaire();?>"><i class="fas fa-trash-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Supprimer</a><br/>
                 </div>
             </td>
 

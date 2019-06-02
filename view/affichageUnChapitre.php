@@ -36,7 +36,7 @@
 
          <?php
 
-
+//debug::printr($unChapitre);
             echo '<h5>' . $unChapitre->getTitreChapitre() . '</h5>';
             echo '<p>' . $unChapitre->getContenuChapitre() . '</p>';
 
@@ -87,9 +87,9 @@
     <div id="container-contact">
         <h5> Laissez vos commentaires</h5></br>
 
-        <?php// debug::printr($unChapitre); ?>
 
-        <form method="post" action=" <?php echo HOST.'/blog_alaska/index.php?action=insertionCommentaires&idChapitre=' . $unChapitre->getIdChapitre()?>">
+
+        <form method="post" action=" <?php echo HOST.'/index.php?action=insertionCommentaires&idChapitre=' . $unChapitre->getIdChapitre()?>">
 <!--?action=lireCommentaireChapitre-->
 
 

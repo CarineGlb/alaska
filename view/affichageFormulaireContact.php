@@ -23,7 +23,7 @@
 
 
 
- <form action="<?php echo HOST;?>/index.php?action=contactvalide" method="post">
+ <form action="<?php echo HOST;?>/index.php?action=formulaireContact" method="post">
 
         <div class="form-group">
 

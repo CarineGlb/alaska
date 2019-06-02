@@ -2,7 +2,7 @@
 
 // objet chapitre dans lequel on crée 1 chapitre
 
-class chapitre extends AbstractEntity
+class Chapitre extends AbstractEntity
 {
     private $_idChapitre; // attributs de notre classe
     private $_titreChapitre;

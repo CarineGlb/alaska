@@ -8,7 +8,7 @@
 
 <h3> Souhaitez-vous supprimer le signalement de ce commentaire ?</h3></br>
 
-    <form method="post" action="<?php echo HOST.'/blog_alaska/index.php?action=signalementCommentaire&idCommentaire=' . $commentaire->getIdCommentaire();?>">
+    <form method="post" action="<?php echo HOST.'/index.php?action=signalementCommentaire&idCommentaire=' . $commentaire->getIdCommentaire();?>">
 
         <label for="nom"><strong>Contenu du commentaire signalé: </strong></label>
 

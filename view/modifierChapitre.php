@@ -4,7 +4,7 @@
     <!--    <form action="traitement.php" method="post"><textarea style="width: 100%;" name="content"><br /> </textarea>
             <input name="send" type="submit" value="Envoyer" /></form> -->
 
-<form method="post" action="<?php echo HOST.'/blog_alaska/index.php?action=modifierChapitre&idChapitre=' . $chapitre->getIdChapitre();?>">
+<form method="post" action="<?php echo HOST.'/index.php?action=modifierChapitre&idChapitre=' . $chapitre->getIdChapitre();?>">
 
     <div id="container-modifierChapitres">
         <h5> Billet simple pour l'Alaska</h5></br>
