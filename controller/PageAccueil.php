@@ -231,8 +231,8 @@ class PageAccueil // sert à montrer la page d'accueil
             $prenom = htmlspecialchars($_POST['prenom']);
         }
 
-        if (!empty($_POST['mail'])) {
-            $mail = htmlspecialchars($_POST['mail']);
+        if (!empty($_POST['email'])) {
+            $mail = htmlspecialchars($_POST['email']);
         }
 
          if (!empty($_POST['message'])) {
@@ -246,7 +246,7 @@ class PageAccueil // sert à montrer la page d'accueil
                      $erreurs['prenom'] = 'champ obligatoire';
                  }
 
-                if (empty($_POST['mail'])) {
+                if (empty($_POST['email'])) {
                      $erreurs['mail'] = 'champ obligatoire';
                  }
 
@@ -254,15 +254,19 @@ class PageAccueil // sert à montrer la page d'accueil
                      $erreurs['textemMessage'] = 'champ obligatoire';
                  }
 
-
 // Le message
-        $message = $nom."\r\n".$prenom."\r\n".$mail."\r\n".$texteMessage;
 
-// Dans le cas où nos lignes comportent plus de 270 caractères, nous les coupons en utilisant wordwrap()
-       // $message = wordwrap($message, 270, "\r\n");
+        $destinataire = 'glcarine26@gmail.com';
+        $sujet = 'Demande de contact depuis le blog alaska'; // Titre de l'email
 
-// Envoi du mail
-        mail('glcarine26@gmail.com', 'Mon Sujet', $message);
+        $contenu =
+            '<p><strong>Nom</strong>: ' . $_POST['nom']. '</p>'. '<p><strong>Prénom</strong>: ' . $_POST['prenom']. '</p>'. '<p><strong>Mail</strong>: ' . $_POST['email']. '</p>'. '<p><strong>Message</strong>: ' . $_POST['texteMessage']. '</p>';
+
+
+        $headers = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+        mail($destinataire, $sujet, $contenu, $headers);
 
              $manager = new ChapitreManager();
              $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();*/
@@ -272,50 +276,13 @@ class PageAccueil // sert à montrer la page d'accueil
                 'nom' => $nom,
                 'prenom' => $prenom,
                 'mail' => $mail,
-                'message' => $message,
-                'erreurs' => $erreurs,
+                'texteMessage' => $texteMessage,
                 'chapitres' =>$chapitres));
         }
 
 
 
 
-    public function messageFormulaireContactValide()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            // Récupération des variables et sécurisation des données
-            $nom = htmlspecialchars($_POST['nom']);
-            $prenom = htmlspecialchars($_POST['prenom']);// htmlentities() convertit des caractères "spéciaux" en équivalent HTML
-            $mail = htmlspecialchars($_POST['mail']);
-            $message = htmlspecialchars($_POST['message']);
-
-            // Variables concernant l'email
-
-            $destinataire = 'glcarine26@gmail.com';
-            $sujet = 'Demande de contact depuis le blog alaska'; // Titre de l'email
-
-            $contenu =
-                '<p><strong>Nom</strong>: ' . $nom . '</p>';
-            '<p><strong>Prénom</strong>: ' . $prenom . '</p>';
-            '<p><strong>Mail</strong>: ' . $mail . '</p>';
-            '<p><strong>Message</strong>: ' . $message . '</p>';
-            '</body></html>'; // Contenu du message de l'email (en XHTML)
-
-
-            $headers = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-
-            mail($destinataire, $sujet, $contenu, $headers); // Fonction principale qui envoi l'email
-            echo '<p><b>Votre message a bien été envoyé!</b></p>';
-
-
-            $myView = new View('contactvalide');
-            $myView->render(array('contenu' => $contenu));
-        }
-
-    }
 
     public function bibliographie()
     {
