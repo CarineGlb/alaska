@@ -54,7 +54,7 @@
 
             <label for="Votre message">Votre message: </label>
 
-            <textarea  class="form-control"  id="message" rows="3" name="message" required></textarea>
+            <textarea  class="form-control"  id="texteMessage" rows="3" name="texteMessage" required></textarea>
 
 
         </div>

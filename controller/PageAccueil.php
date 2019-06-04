@@ -221,7 +221,7 @@ class PageAccueil // sert à montrer la page d'accueil
         $nom='';
         $prenom ='';
         $mail = '';
-        $message ='';
+        $texteMessage ='';
 
         if (!empty($_POST['nom'])) {
             $nom = htmlspecialchars($_POST['nom']);
@@ -231,12 +231,12 @@ class PageAccueil // sert à montrer la page d'accueil
             $prenom = htmlspecialchars($_POST['prenom']);
         }
 
-        if (isset($_POST['mail']) && (!empty($_POST['mail']))) {
+        if (!empty($_POST['mail'])) {
             $mail = htmlspecialchars($_POST['mail']);
         }
 
-         if (isset($_POST['message']) && (!empty($_POST['message']))) {
-             $message = htmlspecialchars($_POST['message']);
+         if (!empty($_POST['message'])) {
+             $texteMessage = htmlspecialchars($_POST['texteMessage']);
          }
                  if (empty($_POST['nom'])) {
                      $erreurs['nom'] = 'champ obligatoire';
@@ -250,15 +250,16 @@ class PageAccueil // sert à montrer la page d'accueil
                      $erreurs['mail'] = 'champ obligatoire';
                  }
 
-                if (empty($_POST['message'])) {
-                     $erreurs['message'] = 'champ obligatoire';
+                if (empty($_POST['texteMessage'])) {
+                     $erreurs['textemMessage'] = 'champ obligatoire';
                  }
 
-// Le message
-        $message = "Line 1\r\nLine 2\r\nLine 3";
 
-// Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
-        $message = wordwrap($message, 70, "\r\n");
+// Le message
+        $message = $nom."\r\n".$prenom."\r\n".$mail."\r\n".$texteMessage;
+
+// Dans le cas où nos lignes comportent plus de 270 caractères, nous les coupons en utilisant wordwrap()
+       // $message = wordwrap($message, 270, "\r\n");
 
 // Envoi du mail
         mail('glcarine26@gmail.com', 'Mon Sujet', $message);
