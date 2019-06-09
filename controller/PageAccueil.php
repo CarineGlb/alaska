@@ -223,35 +223,35 @@ class PageAccueil // sert à montrer la page d'accueil
         $mail = '';
         $texteMessage ='';
 
-        if (!empty($_POST['nom'])) {
+        if(!empty($_POST['nom'])) {
             $nom = htmlspecialchars($_POST['nom']);
         }
 
-        if (!empty($_POST['prenom'])) {
+        if(!empty($_POST['prenom'])) {
             $prenom = htmlspecialchars($_POST['prenom']);
         }
 
-        if (!empty($_POST['email'])) {
+        if(!empty($_POST['email'])) {
             $mail = htmlspecialchars($_POST['email']);
         }
 
-         if (!empty($_POST['message'])) {
+         if(!empty($_POST['texteMessage'])) {
              $texteMessage = htmlspecialchars($_POST['texteMessage']);
          }
-                 if (empty($_POST['nom'])) {
+                 if(empty($_POST['nom'])) {
                      $erreurs['nom'] = 'champ obligatoire';
                  }
 
-                if (empty($_POST['prenom'])) {
+                if(empty($_POST['prenom'])) {
                      $erreurs['prenom'] = 'champ obligatoire';
                  }
 
-                if (empty($_POST['email'])) {
-                     $erreurs['mail'] = 'champ obligatoire';
+                if(empty($_POST['email'])) {
+                     $erreurs['email'] = 'champ obligatoire';
                  }
 
-                if (empty($_POST['texteMessage'])) {
-                     $erreurs['textemMessage'] = 'champ obligatoire';
+                if(empty($_POST['texteMessage'])) {
+                     $erreurs['texteMessage'] = 'champ obligatoire';
                  }
 
 // Le message
@@ -260,7 +260,7 @@ class PageAccueil // sert à montrer la page d'accueil
         $sujet = 'Demande de contact depuis le blog alaska'; // Titre de l'email
 
         $contenu =
-            '<p><strong>Nom</strong>: ' . $_POST['nom']. '</p>'. '<p><strong>Prénom</strong>: ' . $_POST['prenom']. '</p>'. '<p><strong>Mail</strong>: ' . $_POST['email']. '</p>'. '<p><strong>Message</strong>: ' . $_POST['texteMessage']. '</p>';
+            '<p><strong>Nom</strong>: ' . $nom. '</p>'. '<p><strong>Prénom</strong>: ' . $prenom. '</p>'. '<p><strong>Mail</strong>: ' . $mail. '</p>'. '<p><strong>Message</strong>: ' . $texteMessage. '</p>';
 
 
         $headers = 'MIME-Version: 1.0' . "\r\n";

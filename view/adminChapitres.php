@@ -50,8 +50,8 @@
             <td>
                 <div class="tabAction">
 
-                    <a href="<?php echo HOST.'/index.php?action=modifierChapitre&idChapitre=' . $contenu->getIdChapitre();?>"><i class="fas fa-pencil-alt"></i></i><span class="hidden-xs hidden-sm"> Modifier</a><br/>
-                    <a href=<?php echo HOST.'/index.php?action=suppressionChapitre&idChapitre=' . $contenu->getIdChapitre();?>"><i class="fas fa-trash-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Supprimer</a><br/>
+                    <a href="<?php echo HOST.'/indexAdmin.php?action=modifierChapitre&idChapitre=' . $contenu->getIdChapitre();?>"><i class="fas fa-pencil-alt"></i><span class="hidden-xs hidden-sm"> Modifier</a><br/>
+                    <a href=<?php echo HOST.'/indexAdmin.php?action=suppressionChapitre&idChapitre=' . $contenu->getIdChapitre();?>"><i class="fas fa-trash-alt" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Supprimer</a><br/>
                 </div>
             </td>
 

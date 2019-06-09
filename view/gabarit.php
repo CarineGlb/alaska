@@ -58,7 +58,7 @@
 
                         foreach ($chapitres as $chapitre)
                         {
-                            echo '<li> <a href="' .  HOST . '/index.php?action=getChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
+                            echo '<li><a href="' .  HOST . '/index.php?action=getChapitres&idChapitre=' . $chapitre->getIdChapitre() . '">'.$chapitre->getTitreChapitre().'</a></li>';
                         }
                         ?>
                     </ul>
@@ -89,19 +89,21 @@
 
         <div class="container-fluid">
             <ul class="foote_bottom_ul_amrc">
-                <li><a href="#">Accueil</a></li>
+                <li><a href="<?php echo HOST;?>/index.php">Accueil</a></li>
 
-                <li><a href="#">A propos</a></li>
+                <li><a href="<?php echo HOST;?>/index.php?action=apropos">A propos</a></li>
 
-                <li><a href="#">Chapitres</a></li>
+                <li><a href="<?php echo HOST;?>/index.php?action=getChapitres"</a>Chapitres</a></li>
 
-                <li><a href="#">Bibliographie</a></li>
+                <li><a href="<?php echo HOST;?>/index.php?action=formulaireContact">Contact</a></li>
 
-                <li><a href="#">Contact</a></li>
+               <li><a href="<?php echo HOST;?>/index.php?action=bibliographie">Bibliographie</a></li>
+
+
             </ul>
             <!--foote_bottom_ul_amrc ends here-->
             <p class="text-center">Copyright @2018 | Réalisé par <a href="#">Carine GL Productions</a></p>
-            <p class="text-center"><a href=<?php echo HOST;?>/index.php?action=tableauBordAdmin>Connexion</a></p>
+            <p class="text-center"><a href=<?php echo HOST;?>/indexAdmin.php?action=tableauBordAdmin>Connexion</a></p>
             </p>
 
 
@@ -116,21 +118,7 @@
     </footer>
 
 
-    <!--footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class=" col-lg-11">
-                    <p class="text-center">Copyright @2017 | Designed by <a href="#">Carine GL Productions </a></p>
-                </div>
-                <div class=" col-lg-1">
-                    <p class="connexion"><a href="<?php echo HOST;?>/blog_alaska/admin.php">Connexion</a></p>
-                </div>
 
-            </div>
-        </div>
-
-
-</footer-->
 
 
 

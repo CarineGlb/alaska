@@ -26,18 +26,26 @@ class routeur
                         'insertionCommentaires'            => ['controller' =>'PageAccueil',  'method' =>'insertCommentaires'],//insertCommentaires
                         'insertionCommentaireSignale'      => ['controller' =>'PageAccueil',  'method' =>'insertSignalementCommentaires'],//insertSignalementCommentaires
                         'lireLesCommentaires'              => ['controller' =>'PageAccueil',  'method' =>'getCommentaires'],//getCommentaires
-                        'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'getCommentaireChapitre'],//getCommentaireChapitre
-         /*connexionAdmin*/ 'connexionAdmin'               => ['controller' =>'PageAdmin',    'method' =>'connexionAdmin'],
-                        'tableauBordAdmin'                 => ['controller' =>'PageAdmin',    'method' =>'tableauBordAdmin'],
-                        'listCommentaires'                 => ['controller' =>'PageAdmin',    'method' =>'listCommentaires'],//listCommentaires
-                        'listChapitres'                    => ['controller' =>'PageAdmin',    'method' =>'listChapitres'],//listChapitres
-                        'suppressionCommentaire'           => ['controller' =>'PageAdmin',    'method' =>'deleteCommentaire'],//deleteCommentaire
-                        'signalementCommentaire'           => ['controller' =>'PageAdmin',    'method' =>'updateSignalementCommentaire'],//updateCommentaire
-                        'tableauChapitreAdmin'             => ['controller' =>'PageAdmin',    'method' =>'listChapitres'],//listChapitres
-                        'ajouterChapitre'                  => ['controller' =>'PageAdmin',    'method' =>'addChapitre'],//addChapitre
-                        'modifierChapitre'                 => ['controller' =>'PageAdmin',    'method' =>'updateChapitre'],//updateChapitre
-                        'suppressionChapitre'              => ['controller' =>'PageAdmin',    'method' =>'deleteChapitre'],//deleteChapitre
-                        'deleteChapitreEtCommentaires'     => ['controller' =>'PageAdmin',    'method' =>'deleteChapitreEtCommentaires']
+                        'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'getCommentaireChapitre']//getCommentaireChapitre
+
+        ];
+
+    private $routesAdmin =
+        [
+
+            'connexionAdmin'                   => ['controller' =>'PageAdmin',    'method' =>'connexionAdmin'],
+            'tableauBordAdmin'                 => ['controller' =>'PageAdmin',    'method' =>'tableauBordAdmin'],
+            'listCommentaires'                 => ['controller' =>'PageAdmin',    'method' =>'listCommentaires'],//listCommentaires
+            'listChapitres'                    => ['controller' =>'PageAdmin',    'method' =>'listChapitres'],//listChapitres
+            'suppressionCommentaire'           => ['controller' =>'PageAdmin',    'method' =>'deleteCommentaire'],//deleteCommentaire
+            'signalementCommentaire'           => ['controller' =>'PageAdmin',    'method' =>'updateSignalementCommentaire'],//updateCommentaire
+            'tableauChapitreAdmin'             => ['controller' =>'PageAdmin',    'method' =>'listChapitres'],//listChapitres
+            'ajouterChapitre'                  => ['controller' =>'PageAdmin',    'method' =>'addChapitre'],//addChapitre
+            'modifierChapitre'                 => ['controller' =>'PageAdmin',    'method' =>'updateChapitre'],//updateChapitre
+            'suppressionChapitre'              => ['controller' =>'PageAdmin',    'method' =>'deleteChapitre'],//deleteChapitre
+            'deleteChapitreEtCommentaires'     => ['controller' =>'PageAdmin',    'method' =>'deleteChapitreEtCommentaires']
+
+
         ];
 
     public function __construct($request)// on crée le construc qui recupere $request
@@ -45,7 +53,7 @@ class routeur
         $this->request = $request; // il affecte à request la variable request
     }
 
-    public function renderController()
+   public function renderController()
     {
         $request = $this->request;
 
@@ -65,6 +73,31 @@ class routeur
             echo '404';
         }
     }
+
+    public function renderControllerAdmin()
+    {
+        $request = $this->request;
+
+        if(key_exists($request, $this->routesAdmin)) // si la clé existe dans le tableau routes alors
+        {
+            $controller = $this->routesAdmin[$request]['controller']; // on appelle le controller egal à sthis routes request
+            $method     = $this->routesAdmin[$request]['method'];
+            // include(CONTROLLER.$controller.'.php');
+
+            $currentController = new $controller(); // $controller demandé juste au dessus
+            $currentController->$method();
+        }
+
+        else
+        {
+
+            echo '404';
+        }
+    }
+
+
+
+
 }
 
 

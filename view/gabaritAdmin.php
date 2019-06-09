@@ -33,10 +33,10 @@
             </div>
             <div class="navi">
                 <ul>
-                    <li class="active"><a href=<?php echo HOST;?>/index.php?action=tableauBordAdmin><i class="fas fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Accueil</a> </li>
-                    <li><a href=<?php echo HOST;?>/index.php?action=listCommentaires><i class="fas fa-comments" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Commentaires</span></a></li>
-                    <li><a href=<?php echo HOST;?>/index.php?action=listChapitres><i class="fas fa-edit" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Chapitres du livre</span></a></li>
-                    <li><a href= <?php echo HOST;?>/index.php?action=ajouterChapitre><i class="fas fa-user-edit" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Rédiger un nouveau chapitre</span></a></li>
+                    <li class="active"><a href=<?php echo HOST;?>/indexAdmin.php?action=tableauBordAdmin><i class="fas fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Accueil</a> </li>
+                    <li><a href=<?php echo HOST;?>/indexAdmin.php?action=listCommentaires><i class="fas fa-comments" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Commentaires</span></a></li>
+                    <li><a href=<?php echo HOST;?>/indexAdmin.php?action=listChapitres><i class="fas fa-edit" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Chapitres du livre</span></a></li>
+                    <li><a href= <?php echo HOST;?>/indexAdmin.php?action=ajouterChapitre><i class="fas fa-user-edit" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Rédiger un nouveau chapitre</span></a></li>
                     <li><a href= <?php echo HOST;?>/index.php><i class="fas fa-arrow-left" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Revenir sur le site</span></a></li>
 
 
@@ -73,7 +73,7 @@
                             <h2><?php echo $nombreTotalCommentaires;?> Nouveaux Commentaires</h2>
                             <br/>
                             <br/>
-                            <a href=<?php echo HOST;?>/index.php?action=listCommentaires>Voir le détail</a>
+                            <a href=<?php echo HOST;?>/indexAdmin.php?action=listCommentaires>Voir le détail</a>
 
 
                         </div>
@@ -83,7 +83,7 @@
                         <div class="sales report">
                             <h2><?php echo $nombreTotalChapitres;?> Chapitres en ligne</h2><br/>
                             <br/>
-                            <a href=<?php echo HOST;?>/index.php?action=tableauChapitreAdmin>Voir le détail</a>
+                            <a href=<?php echo HOST;?>/indexAdmin.php?action=tableauChapitreAdmin>Voir le détail</a>
 
 
                         </div>

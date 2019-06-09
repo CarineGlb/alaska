@@ -1,9 +1,9 @@
-<FilesMatch tableauBordAdmin.php>
+<Files indexAdmin.php>
 
-AuthUserFile "/home/carineglbv/.htpasswd"
-
-AuthName "Connectez-vous avec votre identifiant et votre mot de passe pour vous identifier"
+AuthUserFile /home/carineglbv/www/alaska/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Accès Restreint"
 AuthType basic
 require valid-user
 
-</FilesMatch>
+</Files>
