@@ -1,4 +1,4 @@
-<section>
+
     <div class="container">
         <div class="row justify-content-start">
             <div class="col-lg-12">
@@ -9,10 +9,7 @@
 
         </div>
     </div>
-</section>
-<br>
 
-<section>
 <div class="container-chapitre">
     <div class="row">
         <div class="col-lg-5">
@@ -21,35 +18,34 @@
     </div>
 </div>
 
-<br>
-</section>
+
 
 
  <div class="container">
      <div class="row justify-content-center">
          <div class="col-lg-12">
-             <p> Vous trouverez ci-dessous le premier chapitre du roman "Billet simple pour l'Alaska".</br>
+             <p> Vous trouverez ci-dessous le premier chapitre du roman "Billet simple pour l'Alaska".<br/>
              Si vous souhaitez lire les suivants, cliquez sur le chapitre en question dans le menu de navigation.</p>
 
 
-     <p>
+
 
          <?php
 
 //debug::printr($unChapitre);
             echo '<h5>' . $unChapitre->getTitreChapitre() . '</h5>';
-            echo '<p>' . $unChapitre->getContenuChapitre() . '</p>';
+            echo '<p>' . $unChapitre->getContenuChapitre();
 
 
 
 
          ?>
 
-    </p>
+
          </div>
      </div>
 </div>
-    </section>
+
 
 <section class="affichageCommentaires">
 
@@ -66,7 +62,7 @@
 
    foreach( $commentaires as $key=>$contenu) // boucle sur mon tableau de chapitres : pour chaque element de mon tableau $chapitres, prends la valeur $ chapitre
      {
-         echo '<strong>' . htmlspecialchars($contenu->getPseudoCommentaire()).'</strong> : '. htmlspecialchars($contenu->getContenuCommentaire()) .' <br/><a href='. HOST.'/blog_alaska/index.php?action=insertionCommentaireSignale&idCommentaire='.$contenu->getIdCommentaire() . '&idChapitre=' . $unChapitre->getIdChapitre() . '>Signaler le commentaire </a></button>
+         echo '<strong>' . htmlspecialchars($contenu->getPseudoCommentaire()).'</strong> : '. htmlspecialchars($contenu->getContenuCommentaire()) .' <br/><a href="'. HOST.'/blog_alaska/index.php?action=insertionCommentaireSignale&idCommentaire='.$contenu->getIdCommentaire() . '&idChapitre=' . $unChapitre->getIdChapitre() . '">Signaler le commentaire </a>
 <br/>';
      echo '<br/>';}
     }
@@ -85,7 +81,7 @@
 
 
     <div id="container-contact">
-        <h5> Laissez vos commentaires</h5></br>
+        <h5> Laissez vos commentaires</h5><br/>
 
 
 
@@ -98,7 +94,7 @@
 
                         <input type="hidden" id="idCommentaire" name="idCommentaire" value="">
 
-                        <label for="nom">Votre pseudo: </label>
+                        <label for="pseudo">Votre pseudo: </label>
 
                         <input type="text" id="pseudo" class="form-control" name="pseudoCommentaire"  required>
 
@@ -114,11 +110,14 @@
 
                     <div class="form-group">
 
-                        <label for="prenom" >Votre commentaire: </label>
+                        <label for="contenuCommentaire">Votre commentaire: <br/></label>
 
-                        <textarea  class="form-control"  id="contenu" rows="3" name="contenuCommentaire"  required></textarea>
+                        <br/><textarea id="contenuCommentaire" rows="3" name="contenuCommentaire"  required  cols="33"></textarea>
+                    </div>
 
-                        <input type='hidden' name='idChapitre' value='<?= $unChapitre->getIdChapitre() // attention champ caché ?>' >
+                     <div>
+
+                        <input type="hidden" name="idChapitre" value='<?= $unChapitre->getIdChapitre() // attention champ caché ?>' >
 
                     </div>
 

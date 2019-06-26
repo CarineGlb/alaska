@@ -19,7 +19,7 @@ class PageAccueil // sert à montrer la page d'accueil
     public function aPropos()
     {
         $chapitreManager = new ChapitreManager();
-        $idChapitre = $_GET['idChapitre'];
+        //$idChapitre = $_GET['idChapitre'];
         $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
 
         $myView = new View('affichageAPropos');
@@ -79,7 +79,7 @@ class PageAccueil // sert à montrer la page d'accueil
 
                 $unChapitre = $chapitreManager->getChapitre($idChapitre);
 
-                $idCommentaire = htmlspecialchars($_GET['idCommentaire']);
+                //$idCommentaire = htmlspecialchars($_GET['idCommentaire']);
 
                 $commentaireManager = new CommentaireManager();
 

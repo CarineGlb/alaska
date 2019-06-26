@@ -1,4 +1,4 @@
-<section>
+
     <div class="container">
         <div class="row justify-content-start ">
             <div class="col-lg-12">
@@ -9,17 +9,17 @@
 
         </div>
     </div>
-</section>
+
 
 
 <div id="container-contact">
-    <h3> Vous souhaitez me contacter ?</h3></br>
+    <h3> Vous souhaitez me contacter ?</h3><br/>
 
 
 <p> Vous souhaitez me poser une question sur mon livre, mes chapitres, mes aventures ?</p>
 <p> Remplissez le formulaire et je vous répondrai dans les meilleurs délais.</p>
 
-</br>
+<br/>
 
 
 
@@ -43,19 +43,18 @@
 
         <div class="form-group">
 
-            <label for="mail">Email : </label>
+            <label for="email">Email : </label>
 
-            <input type="email"  id="email" class="form-control" name="email" required>
-
+            <input type="email" id="email" class="form-control" name="email" required>
 
         </div>
 
+
         <div class="form-group">
 
-            <label for="Votre message">Votre message: </label>
+            <label for="texteMessage">Votre message: </label>
 
-            <textarea  class="form-control"  id="texteMessage" rows="3" name="texteMessage" required></textarea>
-
+            <textarea  class="form-control" id="texteMessage" rows="3" name="texteMessage" required></textarea>
 
         </div>
 

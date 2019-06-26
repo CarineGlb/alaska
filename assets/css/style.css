@@ -45,13 +45,12 @@ ul.dropdown-menu show{
     margin-left: 310px;
 }
 
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
+@media (max-width: 450px) {
+
+
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .container {
         width: 970px;
     }
@@ -292,4 +291,5 @@ h5
     border:1px solid #CCC;
     border-radius:50%;
 }
+
 
