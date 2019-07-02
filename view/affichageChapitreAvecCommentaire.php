@@ -1,6 +1,6 @@
 
     <div class="container">
-        <div class="row justify-content-start">
+        <div class="row justify-content-center">
             <div class="col-lg-12">
 
                 <img src="assets/img/glacier.jpg" id="photo" class="img-fluid" alt="Responsive image"/>
@@ -15,7 +15,7 @@
 
     <div class="container-chapitre">
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-12 col-xs-12">
                 <h3> Billet simple pour l'Alaska</h3>
             </div>
         </div>
@@ -27,7 +27,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-xs-12">
             <p> Vous trouverez ci-dessous le premier chapitre du roman "Billet simple pour l'Alaska".<br/>
                 Si vous souhaitez lire les suivants, cliquez sur le chapitre en question dans le menu de navigation.</p>
 
@@ -51,7 +51,7 @@
 </div>
 
 
-<div class="affichageCommentaires">
+<div class="affichageCommentaires col-lg-10 col-xs-10">
 
     <h5> Vos commentaires</h5><br/>
 

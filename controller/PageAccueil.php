@@ -47,10 +47,7 @@ class PageAccueil // sert à montrer la page d'accueil
             $commentaires= $commentaireManager->getListeCommentaires($idChapitre);
 
         }
-         else
-        {
-          echo 'Aucun commentaire de publié';
-         }
+
 
         $myView = new View('affichageUnChapitre');
         $myView->render(array(
@@ -84,7 +81,7 @@ class PageAccueil // sert à montrer la page d'accueil
                 $commentaireManager = new CommentaireManager();
 
                 $commentaire = new commentaire($idChapitre); // mon objet $sommentaire est mon entité commentaire
-                $commentaire->setIdCommentaire (htmlspecialchars($idCommentaire));
+
                 $commentaire->setPseudoCommentaire(htmlspecialchars($_POST['pseudoCommentaire']));
                 $commentaire->setContenuCommentaire(htmlspecialchars($_POST['contenuCommentaire']));
                 $commentaire->setMailCommentaire(htmlspecialchars($_POST['mailCommentaire']));
@@ -110,7 +107,6 @@ class PageAccueil // sert à montrer la page d'accueil
         }
 
     }
-
 
 
 
@@ -218,10 +214,12 @@ class PageAccueil // sert à montrer la page d'accueil
 
     public function formulaireContact()
     {
+
         $nom='';
         $prenom ='';
         $mail = '';
         $texteMessage ='';
+
 
         if(!empty($_POST['nom'])) {
             $nom = htmlspecialchars($_POST['nom']);
@@ -234,6 +232,7 @@ class PageAccueil // sert à montrer la page d'accueil
         if(!empty($_POST['email'])) {
             $mail = htmlspecialchars($_POST['email']);
         }
+
 
          if(!empty($_POST['texteMessage'])) {
              $texteMessage = htmlspecialchars($_POST['texteMessage']);
@@ -254,6 +253,12 @@ class PageAccueil // sert à montrer la page d'accueil
                      $erreurs['texteMessage'] = 'champ obligatoire';
                  }
 
+
+        $messageResultat = 'Votre formulaire a bien été envoyé et je vous en remercie. Je vous répondrai dans les plus brefs délais';
+        $messageErreur = 'Erreur dans l\'envoi de votre message';
+
+
+
 // Le message
 
         $destinataire = 'glcarine26@gmail.com';
@@ -271,18 +276,68 @@ class PageAccueil // sert à montrer la page d'accueil
              $manager = new ChapitreManager();
              $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();*/
 
+
+
             $myView = new View('affichageFormulaireContact');
             $myView->render(array(
                 'nom' => $nom,
                 'prenom' => $prenom,
                 'mail' => $mail,
                 'texteMessage' => $texteMessage,
+                'messageResultat'=>$messageResultat,
+                'messageErreur'=>$messageErreur,
                 'chapitres' =>$chapitres));
         }
 
 
 
+    public function messageFormulaireContactValide()
+    {
 
+        $nom='';
+        $prenom ='';
+        $mail = '';
+        $texteMessage ='';
+
+        if(!empty($_POST['nom'])) {
+            $nom = htmlspecialchars($_POST['nom']);
+        }
+
+        if(!empty($_POST['prenom'])) {
+            $prenom = htmlspecialchars($_POST['prenom']);
+        }
+
+        if(!empty($_POST['email'])) {
+            $mail = htmlspecialchars($_POST['email']);
+        }
+
+        if(!empty($_POST['texteMessage'])) {
+            $texteMessage = htmlspecialchars($_POST['texteMessage']);
+        }
+        if(empty($_POST['nom'])) {
+            $erreurs['nom'] = 'champ obligatoire';
+        }
+
+        if(empty($_POST['prenom'])) {
+            $erreurs['prenom'] = 'champ obligatoire';
+        }
+
+        if(empty($_POST['email'])) {
+            $erreurs['email'] = 'champ obligatoire';
+        }
+
+        if(empty($_POST['texteMessage'])) {
+            $erreurs['texteMessage'] = 'champ obligatoire';
+        }
+
+        $chapitreManager = new ChapitreManager();
+        $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
+
+
+        $myView = new View('messageFormulaireContactValide');
+        $myView->render(array('chapitres' => $chapitres));
+
+    }
 
     public function bibliographie()
     {
@@ -293,6 +348,15 @@ class PageAccueil // sert à montrer la page d'accueil
         $myView->render(array('chapitres' => $chapitres));
     }
 
+    public function mentionsLegales()
+    {
+        $chapitreManager = new ChapitreManager();
+        $chapitres = $chapitreManager->getListeChapitres(); //publierTousLesChapitres();
+
+        $myView = new View('mentionsLegales');
+        $myView->render(array('chapitres' => $chapitres));
+
+    }
 
 
 }

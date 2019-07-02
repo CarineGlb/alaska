@@ -1,29 +1,21 @@
 
     <div class="container">
-        <div class="row justify-content-start">
-            <div class="col-lg-12">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-xs-12">
 
                 <img src="assets/img/glacier.jpg" id="photo" class="img-fluid" alt="Responsive image"/>
 
             </div>
 
         </div>
-    </div>
-
-<div class="container-chapitre">
-    <div class="row">
-        <div class="col-lg-5">
-        <h3> Billet simple pour l'Alaska</h3>
-        </div>
-    </div>
-</div>
 
 
 
+<div class="container-chapitres">
 
- <div class="container">
-     <div class="row justify-content-center">
-         <div class="col-lg-12">
+        <div class="col-lg-10 col-xs-10">
+        <h3 class="titreChapitre"> Billet simple pour l'Alaska</h3>
+
              <p> Vous trouverez ci-dessous le premier chapitre du roman "Billet simple pour l'Alaska".<br/>
              Si vous souhaitez lire les suivants, cliquez sur le chapitre en question dans le menu de navigation.</p>
 
@@ -42,12 +34,11 @@
          ?>
 
 
-         </div>
-     </div>
-</div>
 
 
-<section class="affichageCommentaires">
+
+
+<div class="affichageCommentaires col-lg-10 col-xs-10">
 
     <h5> Vos commentaires</h5>
 
@@ -74,13 +65,13 @@
   ?>
 
 
+</div>
 
 
-</section>
 
 
 
-    <div id="container-contact">
+    <div class="container-contact col-lg-10 col-xs-10">
         <h5> Laissez vos commentaires</h5><br/>
 
 
@@ -112,7 +103,7 @@
 
                         <label for="contenuCommentaire">Votre commentaire: <br/></label>
 
-                        <br/><textarea id="contenuCommentaire" rows="3" name="contenuCommentaire"  required  cols="33"></textarea>
+                        <br/><textarea  class="form-control" id="contenuCommentaire" rows="3" name="contenuCommentaire"  required  cols="33"></textarea>
                     </div>
 
                      <div>
@@ -128,6 +119,9 @@
 
             </div>
 
+    </div>
 
 
+</div>
 
+    </div>

@@ -26,7 +26,8 @@ class routeur
                         'insertionCommentaires'            => ['controller' =>'PageAccueil',  'method' =>'insertCommentaires'],//insertCommentaires
                         'insertionCommentaireSignale'      => ['controller' =>'PageAccueil',  'method' =>'insertSignalementCommentaires'],//insertSignalementCommentaires
                         'lireLesCommentaires'              => ['controller' =>'PageAccueil',  'method' =>'getCommentaires'],//getCommentaires
-                        'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'getCommentaireChapitre']//getCommentaireChapitre
+                        'lireCommentaireChapitre'          => ['controller' =>'PageAccueil',  'method' =>'getCommentaireChapitre'],//getCommentaireChapitre
+                        'mentionsLegales'                  => ['controller' =>'PageAccueil',  'method' =>'mentionsLegales']
 
         ];
 
