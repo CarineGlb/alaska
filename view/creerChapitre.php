@@ -10,7 +10,7 @@
 
 
 
-        <form name="redigerNouveauChapitre" id="redigerNouveauChapitre" action="<?php echo HOST;?>/index.php?action=ajouterChapitre" method="post">
+        <form name="redigerNouveauChapitre" id="redigerNouveauChapitre" action="<?php echo HOST;?>/indexAdmin.php?action=ajouterChapitre" method="post">
 
             <label for="texte" >Titre : </label>
             <input type="text" id="titreChapitre" class="form-control" name="titreChapitre">

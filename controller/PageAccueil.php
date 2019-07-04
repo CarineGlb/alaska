@@ -114,7 +114,6 @@ class PageAccueil // sert à montrer la page d'accueil
     {
         if (isset($_GET['idCommentaire']))
         {
-
             $idCommentaire = $_GET['idCommentaire'];
 
             // instancie les managers
@@ -132,6 +131,7 @@ class PageAccueil // sert à montrer la page d'accueil
         }
 
         $this->getChapitres($messageResultat);
+
     }
 
 
@@ -219,76 +219,81 @@ class PageAccueil // sert à montrer la page d'accueil
         $prenom ='';
         $mail = '';
         $texteMessage ='';
+        $mailEnvoye='';
+        $messageResultat='';
+
+        if(isset($_POST['nom'])) {
+
+            if (!empty($_POST['nom'])) {
+                $nom = htmlspecialchars($_POST['nom']);
+            }
+
+            if (!empty($_POST['prenom'])) {
+                $prenom = htmlspecialchars($_POST['prenom']);
+            }
+
+            if (!empty($_POST['email'])) {
+                $mail = htmlspecialchars($_POST['email']);
+            }
 
 
-        if(!empty($_POST['nom'])) {
-            $nom = htmlspecialchars($_POST['nom']);
-        }
+            if (!empty($_POST['texteMessage'])) {
+                $texteMessage = htmlspecialchars($_POST['texteMessage']);
+            }
 
-        if(!empty($_POST['prenom'])) {
-            $prenom = htmlspecialchars($_POST['prenom']);
-        }
+            if (empty($_POST['nom'])) {
+                $erreurs['nom'] = 'champ obligatoire';
+            }
 
-        if(!empty($_POST['email'])) {
-            $mail = htmlspecialchars($_POST['email']);
-        }
+            if (empty($_POST['prenom'])) {
+                $erreurs['prenom'] = 'champ obligatoire';
+            }
 
+            if (empty($_POST['email'])) {
+                $erreurs['email'] = 'champ obligatoire';
+            }
 
-         if(!empty($_POST['texteMessage'])) {
-             $texteMessage = htmlspecialchars($_POST['texteMessage']);
-         }
-                 if(empty($_POST['nom'])) {
-                     $erreurs['nom'] = 'champ obligatoire';
-                 }
-
-                if(empty($_POST['prenom'])) {
-                     $erreurs['prenom'] = 'champ obligatoire';
-                 }
-
-                if(empty($_POST['email'])) {
-                     $erreurs['email'] = 'champ obligatoire';
-                 }
-
-                if(empty($_POST['texteMessage'])) {
-                     $erreurs['texteMessage'] = 'champ obligatoire';
-                 }
-
-
-        $messageResultat = 'Votre formulaire a bien été envoyé et je vous en remercie. Je vous répondrai dans les plus brefs délais';
-        $messageErreur = 'Erreur dans l\'envoi de votre message';
-
-
+            if (empty($_POST['texteMessage'])) {
+                $erreurs['texteMessage'] = 'champ obligatoire';
+            }
 
 // Le message
 
-        $destinataire = 'glcarine26@gmail.com';
-        $sujet = 'Demande de contact depuis le blog alaska'; // Titre de l'email
+            $destinataire = 'glcarine26@gmail.com';
+            $sujet = 'Demande de contact depuis le blog alaska'; // Titre de l'email
 
-        $contenu =
-            '<p><strong>Nom</strong>: ' . $nom. '</p>'. '<p><strong>Prénom</strong>: ' . $prenom. '</p>'. '<p><strong>Mail</strong>: ' . $mail. '</p>'. '<p><strong>Message</strong>: ' . $texteMessage. '</p>';
-
-
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-        mail($destinataire, $sujet, $contenu, $headers);
-
-             $manager = new ChapitreManager();
-             $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();*/
+            $contenu =
+                '<p><strong>Nom</strong>: ' . $nom . '</p>' . '<p><strong>Prénom</strong>: ' . $prenom . '</p>' . '<p><strong>Mail</strong>: ' . $mail . '</p>' . '<p><strong>Message</strong>: ' . $texteMessage . '</p>';
 
 
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-            $myView = new View('affichageFormulaireContact');
-            $myView->render(array(
-                'nom' => $nom,
-                'prenom' => $prenom,
-                'mail' => $mail,
-                'texteMessage' => $texteMessage,
-                'messageResultat'=>$messageResultat,
-                'messageErreur'=>$messageErreur,
-                'chapitres' =>$chapitres));
+            $mailEnvoye = mail($destinataire, $sujet, $contenu, $headers);
+
+            if ($mailEnvoye)
+            {
+                $messageResultat = 'Votre formulaire a bien été envoyé et je vous en remercie. Je vous répondrai dans les plus brefs délais';
+            }
+            else {
+                $messageResultat = 'Erreur dans l\'envoi de votre message';
+            }
         }
+        $manager = new ChapitreManager();
+        $chapitres = $manager->getListeChapitres(); //publierTousLesChapitres();*/
 
+
+        $myView = new View('affichageFormulaireContact');
+        $myView->render(array(
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'mail' => $mail,
+            'mailEnvoye'=>$mailEnvoye,
+            'texteMessage' => $texteMessage,
+            'messageResultat'=>$messageResultat,
+            'chapitres' =>$chapitres));
+
+    }
 
 
     public function messageFormulaireContactValide()

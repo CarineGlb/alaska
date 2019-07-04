@@ -19,8 +19,19 @@
 <p> Vous souhaitez me poser une question sur mon livre, mes chapitres, mes aventures ?</p>
 <p> Remplissez le formulaire et je vous répondrai dans les meilleurs délais.</p>
 
-<br/>
 
+<div class="messageResultat">
+
+    <?php
+
+    if(!empty($messageResultat))
+    {
+      echo $messageResultat;
+    }
+
+    ?>
+
+</div>
 
 
  <form action="<?php echo HOST;?>/index.php?action=formulaireContact" method="post">
@@ -43,7 +54,7 @@
 
         <div class="form-group">
 
-            <label for="email">Email : </label>
+            <label for="email">Email (Le format de votre adresse email doit être XXX@XXX.XXX) : </label>
 
             <input type="email" id="email" class="form-control" name="email" required>
 

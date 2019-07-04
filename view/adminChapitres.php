@@ -2,6 +2,9 @@
 
 <div class="containertabChapitres">
 
+
+ <div class="messageResultat">
+
     <?php
     if(!empty($message))
     {
@@ -9,9 +12,9 @@
     }
 
     ?>
+ </div>
 
-
-    <h3> Listes des chapitres</h3><br/>
+<h3> Listes des chapitres</h3><br/>
   <div class="rowTabChapitres">
      <div class="tableau-chapitres">
 

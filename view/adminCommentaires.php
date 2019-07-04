@@ -2,6 +2,8 @@
 
 <div class="containertabCommentaires">
 
+
+    <div class="messageResultat">
     <?php
     if(!empty($message))
     {
@@ -9,6 +11,10 @@
     }
 
     ?>
+    </div>
+
+
+
 
     <h3> Listes des commentaires</h3><br/>
   <div class="rowTabCommentaires">

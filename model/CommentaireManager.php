@@ -126,6 +126,7 @@ $req->execute(array(
         $pdoStat = $bdd->prepare($query);
         $pdoStat->bindValue(':idChapitre', $idChapitre, PDO::PARAM_INT);
         $pdoStat->execute();
+        $tabCommentaire=[];
 
         while ($results= $pdoStat->fetch(PDO::FETCH_ASSOC))
         {

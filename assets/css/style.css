@@ -332,8 +332,13 @@ label.form-check-label
 }
 
 
-
-
+div.messageResultat
+{
+    color: #28a745;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
 
 
 

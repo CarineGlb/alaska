@@ -592,20 +592,28 @@ th
 .modal-header.login-header {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-/*Main CSS*/
+/*Main CSS*/}
 
 p {
-    text-align: right;
+    text-align: left;
     clear: both;
 }
 p span {
     float: left;
 }
 
+div.messageResultat
+{
+    color: #28a745;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
 
 
-
-
+#texte{
+    display:none;
+}
 
 
 

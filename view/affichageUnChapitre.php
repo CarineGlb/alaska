@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-12 col-xs-12">
 
-                <img src="assets/img/glacier.jpg" id="photo" class="img-fluid" alt="Responsive image"/>
+                <img src="assets/img/glacier.jpg" id="photo" class="img-fluid" alt="alaska"/>
 
             </div>
 
@@ -40,11 +40,14 @@
 
 <div class="affichageCommentaires col-lg-10 col-xs-10">
 
-    <h5> Vos commentaires</h5>
+    <h5 class="commentaires"> Vos commentaires</h5>
 
-
+<div class="messageResultat">
 
     <strong><?php echo $messageResultat?></strong><br/>
+
+</div>
+
 
 
    <?php
@@ -53,7 +56,7 @@
 
    foreach( $commentaires as $key=>$contenu) // boucle sur mon tableau de chapitres : pour chaque element de mon tableau $chapitres, prends la valeur $ chapitre
      {
-         echo '<strong>' . htmlspecialchars($contenu->getPseudoCommentaire()).'</strong> : '. htmlspecialchars($contenu->getContenuCommentaire()) .' <br/><a href="'. HOST.'/blog_alaska/index.php?action=insertionCommentaireSignale&idCommentaire='.$contenu->getIdCommentaire() . '&idChapitre=' . $unChapitre->getIdChapitre() . '">Signaler le commentaire </a>
+         echo '<strong>' . htmlspecialchars($contenu->getPseudoCommentaire()).'</strong> : '. htmlspecialchars($contenu->getContenuCommentaire()) .' <br/><a href="'. HOST.'/index.php?action=insertionCommentaireSignale&idCommentaire='.$contenu->getIdCommentaire() . '&idChapitre=' . $unChapitre->getIdChapitre() . '">Signaler le commentaire </a>
 <br/>';
      echo '<br/>';}
     }
