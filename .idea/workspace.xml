@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3b5ad3f5-75db-499a-9cc6-acb1af5c1df4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/styleadmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/styleadmin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/PageAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PageAccueil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/CommentaireManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/CommentaireManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/adminChapitres.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/adminChapitres.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/adminCommentaires.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/adminCommentaires.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/affichageFormulaireContact.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/affichageFormulaireContact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/affichageUnChapitre.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/affichageUnChapitre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/creerChapitre.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/creerChapitre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/mentionsLegales.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/mentionsLegales.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -300,7 +290,7 @@
           <entry key="htaccess" value="332" />
           <entry key="html" value="20" />
           <entry key="php" value="28943" />
-          <entry key="txt" value="543" />
+          <entry key="txt" value="580" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -308,7 +298,7 @@
           <entry key="CSS" value="3326" />
           <entry key="HTML" value="20" />
           <entry key="PHP" value="28943" />
-          <entry key="PLAIN_TEXT" value="566" />
+          <entry key="PLAIN_TEXT" value="603" />
           <entry key="htaccess" value="332" />
         </counts>
       </usages-collector>
@@ -320,7 +310,7 @@
         <entry file="file://$PROJECT_DIR$/controller/PageAccueil.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="219" column="19" lean-forward="true" selection-start-line="219" selection-start-column="19" selection-end-line="219" selection-end-column="19" />
+              <caret line="219" column="19" selection-start-line="219" selection-start-column="19" selection-end-line="219" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -329,7 +319,7 @@
         <entry file="file://$PROJECT_DIR$/view/affichageUnChapitre.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-510">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -338,7 +328,7 @@
         <entry file="file://$PROJECT_DIR$/view/adminChapitres.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="68" column="18" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -347,7 +337,7 @@
         <entry file="file://$PROJECT_DIR$/view/adminCommentaires.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -356,7 +346,7 @@
         <entry file="file://$PROJECT_DIR$/view/affichageFormulaireContact.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -365,7 +355,7 @@
         <entry file="file://$PROJECT_DIR$/assets/css/styleadmin.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
-              <caret line="611" lean-forward="true" selection-start-line="611" selection-end-line="611" />
+              <caret line="611" selection-start-line="611" selection-end-line="611" />
             </state>
           </provider>
         </entry>
@@ -374,7 +364,7 @@
         <entry file="file://$PROJECT_DIR$/view/gabarit.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="144" column="6" lean-forward="true" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
+              <caret line="144" column="6" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -383,7 +373,7 @@
         <entry file="file://$PROJECT_DIR$/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="82">
-              <caret line="334" lean-forward="true" selection-start-line="334" selection-end-line="340" selection-end-column="1" />
+              <caret line="334" selection-start-line="334" selection-end-line="340" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -898,7 +888,7 @@
       <workItem from="1562086468227" duration="5413000" />
       <workItem from="1562180922626" duration="2242000" />
       <workItem from="1562233830645" duration="5092000" />
-      <workItem from="1562261176925" duration="5217000" />
+      <workItem from="1562261176925" duration="6035000" />
     </task>
     <task id="LOCAL-00001" summary="Modifications fichier outeur, index, cntroller avec tutorat du 05/11">
       <created>1541428740916</created>
@@ -1026,11 +1016,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562095176341</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Dernière version avant soutenance">
+      <created>1562268933332</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1562268933332</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="870990000" />
+    <option name="totallyTimeSpent" value="871808000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,7 +1122,8 @@
     <MESSAGE value="finalisation du projet blog" />
     <MESSAGE value="Correction bugs w3c" />
     <MESSAGE value="Dernière version corrigée w3c, css et responsive" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dernière version corrigée w3c, css et responsive" />
+    <MESSAGE value="Dernière version avant soutenance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dernière version avant soutenance" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../info.php">
@@ -1379,35 +1377,35 @@
     <entry file="file://$PROJECT_DIR$/controller/PageAccueil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="219" column="19" lean-forward="true" selection-start-line="219" selection-start-column="19" selection-end-line="219" selection-end-column="19" />
+          <caret line="219" column="19" selection-start-line="219" selection-start-column="19" selection-end-line="219" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/adminCommentaires.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
-          <caret line="334" lean-forward="true" selection-start-line="334" selection-end-line="340" selection-end-column="1" />
+          <caret line="334" selection-start-line="334" selection-end-line="340" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/adminChapitres.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="68" column="18" lean-forward="true" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/gabarit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="144" column="6" lean-forward="true" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
+          <caret line="144" column="6" selection-start-line="144" selection-start-column="6" selection-end-line="144" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1421,21 +1419,21 @@
     <entry file="file://$PROJECT_DIR$/assets/css/styleadmin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="611" lean-forward="true" selection-start-line="611" selection-end-line="611" />
+          <caret line="611" selection-start-line="611" selection-end-line="611" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/affichageUnChapitre.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/affichageFormulaireContact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
